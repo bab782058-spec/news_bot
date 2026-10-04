@@ -1,0 +1,31 @@
+name: Daily News to LINE
+
+on:
+  schedule:
+    # UTC 22:00 = JST 7:00(翌日)
+    - cron: "0 22 * * *"
+  # 手動実行してテストしたいときのためのボタンも追加しておく
+  workflow_dispatch:
+
+jobs:
+  send-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install feedparser requests
+
+      - name: Run news bot
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          # モデルを差し替えたいときは、リポジトリの Variables に GEMINI_MODEL を登録する(未登録なら既定値)
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: python news_bot.py
