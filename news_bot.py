@@ -68,9 +68,9 @@ DEFAULT_CATEGORY_COLOR = "#777777"
 
 # ---- カードの余白(縦の長さを調整したいときは、ここの値を変える) ----
 # Flexの余白トークンは none(0) / xs(2px) / sm(4px) / md(8px) / lg(12px) / xl(16px) / xxl(20px)
-CARD_HEADER_PAD = "16px"
-CARD_BODY_PAD = "16px"
-CARD_FOOTER_PAD = "10px"
+CARD_HEADER_PAD = "4px"
+CARD_BODY_PAD = "4px"
+CARD_FOOTER_PAD = "4px"
 ITEM_GAP = "md"  # ニュース同士の間隔(区切り線の上下)
 
 
