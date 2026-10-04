@@ -37,6 +37,8 @@ RSS_FEEDS = [
     ("NHKニュース(主要)", "https://www3.nhk.or.jp/rss/news/cat0.xml"),
     ("BBC World News", "https://feeds.bbci.co.uk/news/world/rss.xml"),
     ("Bloomberg Markets", "https://feeds.bloomberg.com/markets/news.rss"),
+    ("BBC Technology", "https://feeds.bbci.co.uk/news/technology/rss.xml"),
+    ("ITmedia AI+", "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml"),
 ]
 
 MAX_ITEMS_PER_FEED = 10
@@ -99,6 +101,7 @@ def summarize_with_gemini(headlines_text):
 各見出しには、末尾に「リンク: 」として元記事のURLが付いています。
 
 この中から、世界の政治・経済・金融・AI・ITにおいて特に重要と考えられるニュースを5つ選んでください。
+選ぶ際は、政治、経済・金融、IT・AIの3分野からバランスよく選んでください。目安は、政治1〜2件、経済・金融1〜2件、IT・AI1〜2件で、合計5件です。どれか1分野だけに偏らないようにしてください。ただし、入力に該当分野の見出しが少ない場合は、他の分野で補って構いません。
 出力は、説明文やMarkdownを一切含めず、次の形式の**JSON配列のみ**にしてください。
 
 [
