@@ -2,9 +2,8 @@ name: Daily News to LINE
 
 on:
   schedule:
-    # UTC 22:00 = JST 7:00(翌日)
-    - cron: "0 22 * * *"
-  # 手動実行してテストしたいときのためのボタン
+    # UTC 21:13 = JST 6:13(翌日)
+    - cron: "13 21 * * *"
   workflow_dispatch:
 
 permissions:
