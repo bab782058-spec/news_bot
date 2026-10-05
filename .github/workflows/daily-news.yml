@@ -2,8 +2,8 @@ name: Daily News to LINE
 
 on:
   schedule:
-      # UTC 3:21 = JST 12:21
-    - cron: "21 3 * * *"
+    # UTC 21:13 = JST 6:13(翌日)
+    - cron: "13 21 * * *"
   workflow_dispatch:
 
 permissions:
@@ -33,14 +33,12 @@ jobs:
       - name: Install dependencies
         run: pip install feedparser requests trafilatura
 
-      # 1) ニュースを集めて、日本語の詳細ページ(docs/)を作る
       - name: Build news pages
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: python news_bot.py build
 
-      # 2) 過去分も残るように、生成したページをリポジトリに保存する
       - name: Commit generated pages
         run: |
           git config user.name "github-actions[bot]"
@@ -53,7 +51,6 @@ jobs:
             git push
           fi
 
-      # 3) ページを公開する(LINEより先に公開して、リンク切れを防ぐ)
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -63,7 +60,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # 4) 公開が終わってからLINEに送る
       - name: Send to LINE
         env:
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
