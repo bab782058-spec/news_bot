@@ -3,7 +3,7 @@ name: Daily News to LINE
 on:
   schedule:
     # UTC 21:13 = JST 6:13(翌日)
-    - cron: "3 45 * * *"
+    - cron: "45 3 * * *"
   workflow_dispatch:
 
 permissions:
