@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mistral、1兆パラメータの「Mistral Large 4」発表</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--card:#f1f4f8;--accent:#2d3e50;--link:#3d5f94}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--fg:#e8eaed;--sub:#9aa3ad;--card:#1f262e;--accent:#2d3e50;--link:#8fb0e0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
+header{background:var(--accent);color:#fff;padding:14px 20px;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:1.35rem;line-height:1.5;margin:0 0 8px}
+h2{font-size:1.1rem;line-height:1.5;margin:1.8em 0 .6em;padding-left:.6em;border-left:4px solid var(--link)}
+.meta{color:var(--sub);font-size:.85rem;margin-bottom:20px}
+.tag{display:inline-block;color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:0 .8em;margin-right:.6em;line-height:1.7}
+.lead{background:var(--card);border-radius:10px;padding:14px 16px;margin:0 0 24px;font-weight:600}
+p{margin:0 0 1.1em;font-size:1.02rem}
+.note{color:var(--sub);font-size:.85rem;border:1px dashed var(--sub);border-radius:8px;padding:8px 12px;margin:0 0 20px}
+.src{margin-top:32px;padding-top:16px;border-top:1px solid var(--card);font-size:.85rem;color:var(--sub)}
+.src p{font-size:.85rem;margin:0 0 .6em}
+a{color:var(--link)}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{padding:14px 0;border-bottom:1px solid var(--card)}
+ul.list .t{font-weight:700}
+ul.list .o{color:var(--sub);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>🌍 Today&#x27;s Top 5 Stories</header>
+<main>
+<h1>Mistral、1兆パラメータの「Mistral Large 4」発表</h1>
+<div class="meta"><span class="tag" style="background:#3F8E9B">AI</span>ITmedia AI+ ・ 2026年10月8日(木)</div>
+<div class="lead">仏Mistral AIは、総パラメータ数が1兆を超える大規模言語モデルのプレビュー版を公開しました。10月末にはモデルの重みをオープンウェイトで公開する予定です。</div>
+
+<h2>新型モデルの概要と開発背景</h2>
+<p>フランスのMistral AIは現地時間の10月6日、同社最大規模となるAIモデル「Mistral Large 4」のパブリックプレビュー版を公開した。開発者向けプラットフォーム「Mistral Studio」では同日からAPIの利用が可能となっている。社内での非公式な愛称は「ML4」または「Le Chonk」とされており、「chonk」という英語圏のネットスラングがぽっちゃりした猫などの動物を指すことから、発表ページや公式ドキュメントにはでぶねこのアイコンやアニメーションが取り入れられている。学習においては、欧州内にあるMistral AIのデータセンターに設置された米NVIDIA製の「Grace Blackwell GPU」を3800基使用して行われており、現在提供されているプレビュー版も同一の基盤上で稼働している。</p>
+<h2>モデルの技術仕様と性能の特長</h2>
+<p>Mistral Large 4は、総パラメータ数が1兆500億に達し、推論時に実際に稼働するアクティブパラメータ数が490億であるMoE構造を採用している。最初から画像を処理できるネイティブマルチモーダル設計であり、1億6000万ではなく16億パラメータのビジョンエンコーダを搭載している。指示応答と推論を単一のモデル内で切り替え可能なハイブリッド型となっており、コンテキスト長は100万トークンに及ぶ。学習データの大部分は多言語で構成され、欧州連合の全公用語を含む160を超える言語をサポートしている。APIの料金設定は、100万トークンあたり入力が1.36ドル、出力が4.18ドルに設定されている。</p>
+<h2>ベンチマークとサイバーセキュリティ分野での実績</h2>
+<p>Mistralによると、本モデルは総合的なベンチマークにおいて、米国および欧州で開発されたオープンウェイトモデルの中で最高水準の性能を記録している。特にコーディング分野のスコアは、DeepSWE v1.1で61.7％、SWE-Atlas-QnAで59.4％、Terminal-Bench 4で28.3％を叩き出し、これらを統合したCoding Agent Indexでは49.8％となり、中国のDeepSeek V4 Pro 0813やQwen3.8 Maxを凌駕した。さらに同社が強く推すサイバーセキュリティ分野では、Artificial AnalysisのCyber Indexにおいて世界の上位5モデルにランクインし、中国以外の地域で開発されたオープンウェイトモデルとしては大差をつけてトップに立った。実在するオープンウェイトソフトウェアの脆弱性を再現した上でパッチを当てるテストでは、全モデル中最高となる82％を記録している。Mistralは、Claude Opus 5.5やGPT-6 Astraといったクローズドモデルがタスクを拒絶してスコアがほぼゼロになるのに対し、防御側に必要な脆弱性の実証作業を自社ポリシーの下で実行できる点にオープンウェイトの優位性があると主張している。</p>
+<h2>安全性評価と今後のスケジュール</h2>
+<p>安全性に関する評価についてMistralは、JailbreakBench等に含まれる悪意あるサイバー攻撃関連の依頼を拒絶する確率が、他のどのオープンウェイトモデルよりも高い水準にあるとしている。モデルの重みデータそのものは、10月末にオープンウェイトとして一般公開される予定である。その公開までの期間を活用し、サイバーセキュリティ企業、審査を通過したパートナー企業、および国家当局と連携しながら、実際の環境を想定したレッドチーミングを実施する方針である。なお、こうした協力組織に対しては、モデレーションの制限を緩和してサイバー関連の機能を拡張したバージョンの提供が予定されている。</p>
+<div class="src">
+<p>原文: <a href="https://www.itmedia.co.jp/news/article/2610/07/2000002075/" rel="noopener noreferrer" target="_blank">ITmedia AI+</a>(外部サイト・原文の言語で表示されます)</p>
+<p>この解説はGeminiが原文をもとに日本語で要約・再構成したものです。正確な内容は原文でご確認ください。</p>
+<p><a href="index.html">← 今日の5本に戻る</a></p>
+</div>
+</main>
+</body>
+</html>
