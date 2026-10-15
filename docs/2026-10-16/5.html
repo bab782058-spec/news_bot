@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>国内サイトにAIエージェント攻撃を観測</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--card:#f1f4f8;--accent:#2d3e50;--link:#3d5f94}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--fg:#e8eaed;--sub:#9aa3ad;--card:#1f262e;--accent:#2d3e50;--link:#8fb0e0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
+header{background:var(--accent);color:#fff;padding:14px 20px;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:1.35rem;line-height:1.5;margin:0 0 8px}
+h2{font-size:1.1rem;line-height:1.5;margin:1.8em 0 .6em;padding-left:.6em;border-left:4px solid var(--link)}
+.meta{color:var(--sub);font-size:.85rem;margin-bottom:20px}
+.tag{display:inline-block;color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:0 .8em;margin-right:.6em;line-height:1.7}
+.lead{background:var(--card);border-radius:10px;padding:14px 16px;margin:0 0 24px;font-weight:600}
+p{margin:0 0 1.1em;font-size:1.02rem}
+.note{color:var(--sub);font-size:.85rem;border:1px dashed var(--sub);border-radius:8px;padding:8px 12px;margin:0 0 20px}
+.src{margin-top:32px;padding-top:16px;border-top:1px solid var(--card);font-size:.85rem;color:var(--sub)}
+.src p{font-size:.85rem;margin:0 0 .6em}
+a{color:var(--link)}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{padding:14px 0;border-bottom:1px solid var(--card)}
+ul.list .t{font-weight:700}
+ul.list .o{color:var(--sub);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>🌍 Today&#x27;s Top 5 Stories</header>
+<main>
+<h1>国内サイトにAIエージェント攻撃を観測</h1>
+<div class="meta"><span class="tag" style="background:#8E6C88">IT</span>ITmedia AI+ ・ 2026年10月16日(金)</div>
+<div class="lead">国内セキュリティ企業が、日本企業のサイトに対するAIエージェントによる攻撃を観測した。約8時間にわたり10段階で手口を変化させながら行われたという。</div>
+
+<h2>国内企業を標的としたAIエージェント攻撃の確認と経緯</h2>
+<p>クラウド型WAFの提供を手がけるセキュリティベンダーのビットフォレストは、日本国内の企業が運用するWebサイトに対して、AIエージェントを用いたサイバー攻撃が仕掛けられている状況を観測したと発表しました。この報告は、同社が運営する技術ブログである「WAF Tech Blog」において、10月14日に公開されました。</p>
+<p>同社ではWebサイトへの攻撃元がAIエージェントであるか否かを判定するための独自の仕組みを新たに導入しており、その稼働直後となる10日夜から14日までの期間において、少なくとも3件の異なるIPアドレスからAIエージェントによる攻撃が行われたことを確認しました。</p>
+<p>今回の発表では、これら観測された事例の中でも特に顕著な動きを見せた1つのIPアドレスからの攻撃について、8時間弱という長時間をかけて10段階にわたり手法を変化させていった推移の詳細が明らかにされています。人工知能を用いた高度な自律的攻撃が、すでに国内のWebサイトを標的として現実に行われている実態を示す事例となりました。</p>
+<h2>応答から行動を修正するAIエージェントの判定手法と事前検証</h2>
+<p>ビットフォレストは、AIエージェントによる攻撃を特定・識別する手法の詳細については非公開としています。判別の基準や具体的な方法を公表してしまうと、攻撃者側に対策を講じられてすり抜けを許してしまうリスクがあるためです。</p>
+<p>しかしながら同社は、AIエージェントならではの挙動特性に着目して検知ロジックを構築したことを明かしています。AIエージェントには、標的となるサーバーからの応答を分析して読み取り、その結果を踏まえて次のアクションを柔軟に修正・変更していくという特有の性質があります。同社はこの行動パターンを逆手に取り、従来の機械的な攻撃との明確な差別化を図りました。</p>
+<p>これまでの一般的な攻撃は、単純なリクエストを機械的かつ連続して送信し続けるものや、「curl」や「sqlmap」といった既存の単一ツールを単純に実行するだけのものが大半を占めていました。これに対し、WAFの挙動を精密に調整することによって、サーバー側の反応を見ながら柔軟にアプローチを変えてくるAIエージェントと、従来の単純な自動攻撃とをしっかりと見分けられるようにしています。</p>
+<p>この仕組みの導入に先立って行われた事前検証では、中国のアリババが開発した「Qwen 3.8 Flash Next」や、同じく中国のZ.aiが開発した「GLM-5.3 Flash」をはじめとする、8種類の高性能モデルによる攻撃を正しく検出できることが確認されました。</p>
+<p>同社はこの判定システムについて、世の中に存在するすべてのAIエージェントを漏れなく網羅して列挙することは難しいとしながらも、この仕組みによって検知されたアクセスに関しては間違いなくAIエージェントによるものであると断定できる精度の高い仕組みを確立したと説明しています。</p>
+<h2>8時間弱で10段階に変化した多角的な攻撃手口と3つの攻撃主体</h2>
+<p>今回ビットフォレストが10日夜から14日にかけて確認した3つのIPアドレスからの攻撃は、それぞれ大きく異なる特徴を示しており、3者それぞれが別の攻撃主体によって実行された可能性があると分析されています。</p>
+<p>その中で最も詳細な推移が報告されたのが、8時間弱にわたって継続したIPアドレスからの攻撃です。この攻撃主体は、時間経過とともに次々と手法を切り替える10段階の攻撃を展開しました。具体的には、1秒あたり約35件というハイペースで送信され全体で約1万件規模に達した高速スキャンや、システムに存在する既知の脆弱性を狙った攻撃、さらには約250件の試行を伴うログイン情報の総当たり攻撃（ブルートフォース攻撃）など、多種多様な攻撃ツールを次々と切り替えながら標的サイトの攻略を試みていました。</p>
+<p>これとは別のIPアドレスから観測された攻撃では、標的サイトに設置された問い合わせフォームに対する連続投稿を含め、全体として5段階にわたる攻撃プロセスが確認されました。また、残るもう1つのIPアドレスからは、約1000件程度のリクエストによるスキャン行為のみが確認されています。</p>
+<p>このように、確認された3件の攻撃は、実行時間や攻撃の段階数、使用されたツールや狙われた標的機能がそれぞれ異なっており、AIエージェントを活用した攻撃が画一的なものではなく、攻撃主体ごとに異なる目的やアプローチで運用されている実態が浮き彫りになりました。</p>
+<h2>AIエージェントを用いた攻撃への有効な対策と今後の展望</h2>
+<p>攻撃側が自律的に判断して行動を変えるAIエージェントを取り入れているという新たな状況に対し、防御側が講じるべき基本的な対策について、ビットフォレストは従来の対策方針と大きく変わるものではないとの見解を示しています。</p>
+<p>同社が有効な防御策として第一に挙げているのは、自社のWebサイトやシステムが抱える脆弱性を確実に解消することです。AIエージェントがどのような手順で攻撃を仕掛けてきたとしても、根本的な脆弱性が存在しなければ不正な侵入や改ざんといった被害を防ぐことができます。</p>
+<p>加えて同社は、あらかじめ定義された既知の攻撃パターンのみを検出する「シグネチャ」に過度に依存しないWAFの導入が不可欠であると指摘しています。状況に応じてアプローチを柔軟に変化させるAIエージェントに対抗するためには、単純なパターンマッチングだけにとどまらない多角的な防御能力を持ったセキュリティ製品の活用が重要となります。</p>
+<p>今後の展望についてビットフォレストは、AIエージェントというツールが攻撃を行う側にとってもあまりに利便性が高く優秀である点を強調しています。これほど有用な手段を攻撃者が利用しない理由はなく、今後はほぼすべての攻撃主体がAIエージェントを標準的なツールとして用いるようになるだろうと推測しています。AIエージェントを悪用したサイバー攻撃の本格的な普及を見据え、Webサイトの運用者はより確実な脆弱性管理と高度な検知能力を備えた多層防御体制の確立が求められています。</p>
+<div class="src">
+<p>原文: <a href="https://www.itmedia.co.jp/aiplus/article/2610/15/2000002284/" rel="noopener noreferrer" target="_blank">ITmedia AI+</a>(外部サイト・原文の言語で表示されます)</p>
+<p>この解説はGeminiが原文をもとに日本語で要約・再構成したものです。正確な内容は原文でご確認ください。</p>
+<p><a href="index.html">← 今日の5本に戻る</a></p>
+</div>
+</main>
+</body>
+</html>
