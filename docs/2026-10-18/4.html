@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Meta、高性能オープンモデル「Muse Spark」発表</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--card:#f1f4f8;--accent:#2d3e50;--link:#3d5f94}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--fg:#e8eaed;--sub:#9aa3ad;--card:#1f262e;--accent:#2d3e50;--link:#8fb0e0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
+header{background:var(--accent);color:#fff;padding:14px 20px;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:1.35rem;line-height:1.5;margin:0 0 8px}
+h2{font-size:1.1rem;line-height:1.5;margin:1.8em 0 .6em;padding-left:.6em;border-left:4px solid var(--link)}
+.meta{color:var(--sub);font-size:.85rem;margin-bottom:20px}
+.tag{display:inline-block;color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:0 .8em;margin-right:.6em;line-height:1.7}
+.lead{background:var(--card);border-radius:10px;padding:14px 16px;margin:0 0 24px;font-weight:600}
+p{margin:0 0 1.1em;font-size:1.02rem}
+.note{color:var(--sub);font-size:.85rem;border:1px dashed var(--sub);border-radius:8px;padding:8px 12px;margin:0 0 20px}
+.src{margin-top:32px;padding-top:16px;border-top:1px solid var(--card);font-size:.85rem;color:var(--sub)}
+.src p{font-size:.85rem;margin:0 0 .6em}
+a{color:var(--link)}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{padding:14px 0;border-bottom:1px solid var(--card)}
+ul.list .t{font-weight:700}
+ul.list .o{color:var(--sub);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>🌍 Today&#x27;s Top 5 Stories</header>
+<main>
+<h1>Meta、高性能オープンモデル「Muse Spark」発表</h1>
+<div class="meta"><span class="tag" style="background:#3F8E9B">AI</span>ITmedia AI+ ・ 2026年10月18日(日)</div>
+<div class="lead">Metaは米国製で最高性能をうたうオープンモデルを発表した。Apple Silicon向けに最適化されており、端末上でのローカル動作が条件付き商用利用で可能となる。</div>
+
+<h2>米メタによるオープンモデル「Muse Spark Open」の発表と概要</h2>
+<p>米メタは現地時間の10月15日、オープンウェイトモデルとなる「Muse Spark Open」を発表し、そのモデルの重みデータを公開しました。メタはこのモデルについて、米国製として開発されたオープンウェイトモデルの中で過去最高となる性能を備えていると打ち出しています。</p>
+<p>今回の発表における大きな特徴の一つとして挙げられているのが、米アップルの独自プロセッサであるApple Siliconに対する最適化が行われている点です。高度な処理性能を必要とする大規模な人工知能モデルでありながら、Apple Siliconの「M5 Ultra」を搭載した「Mac Studio」を2台用意することで、ローカル環境において動作させることが可能であるとされています。</p>
+<h2>モデルの仕様とマルチモーダル対応・公開形式</h2>
+<p>Muse Spark Openは、膨大なパラメータを効率的に運用するための仕組みであるMoE（Mixture of Experts）構造を採用しています。モデル全体の総パラメータ数は8160億に達する一方で、実際に処理を行う際に稼働するアクティブパラメータ数は420億に抑えられています。</p>
+<p>入力として処理可能なデータ形式は多岐にわたり、テキスト情報に加えて画像、動画、音声といった多様なマルチモーダル入力に対応しています。これに対し、モデルから生成されて出力されるデータはテキストのみとなっています。また、一度に処理可能なコンテキスト長は最大で104万8576トークンという非常に大きな処理容量を備えています。</p>
+<p>開発者や研究者に向けたモデルの提供形態としては、BF16形式およびNVFP4形式という2種類の重みデータが用意されており、これらは機械学習プラットフォームのHugging Face上において公開されています。</p>
+<h2>アップルとの協業とMac Studioによるローカル動作性能</h2>
+<p>メタはMuse Spark Openの開発において米アップルと密接な連携を行っており、Apple Silicon向けへの最適化を実現させました。モデルを動かすハードウェアの動作検証はアップル側によって実施されています。</p>
+<p>その検証結果によると、NVFP4形式の重みデータを用いた環境において、M5 Ultraを搭載したMac Studioを4台連携させて分散稼働させた場合、1秒間あたり約36トークンの生成速度を記録しました。さらに、ハードウェアの構成を縮小してMac Studioを2台とした環境においても、1秒間あたり約25トークンの生成が行えることが実証されています。これにより、大規模なモデルでありながら複数台のMac Studioを組み合わせたローカル環境での稼働が現実的な処理速度で達成されていることが示されています。</p>
+<h2>ベンチマーク結果に見るエージェント性能とコーディング性能</h2>
+<p>モデルの能力を評価する各種ベンチマークテストにおいては、得意とする領域と競合に譲る領域の双方が示されています。自律的な処理能力や道具の使用などを測るエージェント性能の指標である「JobBench」や「MCP-Atlas」においては、中国発の高性能モデル群を上回る成果を記録しました。ここで比較対象として挙げられている中国のモデルには、「Qwen 3.8 2.4T A95B」や「GLM 5.3」、そして「Kimi K3」が含まれます。</p>
+<p>その一方で、プログラミングやソフトウェア開発に関連する能力を測定するコーディング性能の指標である「Terminal-Bench 2.1」や「DeepSWE 1.1」などにおいては、前述の中国製モデル群と比較して一部の指標で下回る結果となっています。このように、エージェント関連の性能において高い評価を得ている半面、コーディング分野においては特定の競合モデルに及ばない側面も併せ持っています。</p>
+<h2>独自の「Muse Model License」における商用利用と制限事項</h2>
+<p>Muse Spark Openの利用条件としては、一般的なオープンソースライセンスとは異なり、メタが策定した独自の規約である「Muse Model License」が適用されています。このライセンスのもとでは、商用利用そのものは許諾されているものの、一定の義務や利用制限が設けられています。</p>
+<p>まず利用にあたっては、「Built with Muse Spark Open」という指定の文言を表示する義務が課されているほか、特定の用途に対する制限事項に従う必要があります。さらに収益規模に応じた規定が定められており、利用を行う組織およびその関連会社を合算した過去12カ月連続の総収益が2000万ドルを超える規模に達しており、なおかつ当該モデルをAPIなどの形式を通じて第三者に提供する事業を行う場合には、メタとの間で別途契約を結ぶことが義務付けられています。</p>
+<p>ただし、この別途契約が必要となる条件には例外規定が設けられています。自社の組織内における業務利用を目的とする社内利用の場合や、提供するサービス全体の機能の一部としてモデルを組み込んで活用するケースなどについては、総収益の条件を満たしていても別途の契約締結を求められる対象からは除外されています。</p>
+<div class="src">
+<p>原文: <a href="https://www.itmedia.co.jp/aiplus/article/2610/16/2000002328/" rel="noopener noreferrer" target="_blank">ITmedia AI+</a>(外部サイト・原文の言語で表示されます)</p>
+<p>この解説はGeminiが原文をもとに日本語で要約・再構成したものです。正確な内容は原文でご確認ください。</p>
+<p><a href="index.html">← 今日の5本に戻る</a></p>
+</div>
+</main>
+</body>
+</html>
