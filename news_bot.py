@@ -216,22 +216,22 @@ TECHCRUNCH = ("TechCrunch", "https://techcrunch.com/feed/")
 # 配信するテーマ。この並び順でカードに表示される。1テーマ1件。
 TOPICS = [
     Topic(
-        "jp_politics", "日本政治", "日本の政治",
+        "jp_politics", "国内政治", "日本の政治",
         "国会・内閣・政党・選挙・外交・安全保障など、日本の政治に関するもの",
         "#4A6FA5", rss_collector("jp_politics", [NHK_POLITICS, NHK_TOP]),
     ),
     Topic(
-        "jp_economy", "日本経済", "日本の経済",
+        "jp_economy", "国内経済", "日本の経済",
         "景気・物価・賃金・雇用・企業業績・貿易・産業など。金利・為替・株価・金融機関の話題は「日本の金融」に回す",
         "#5C8374", rss_collector("jp_economy", [NHK_ECONOMY, YAHOO_BUSINESS]),
     ),
     Topic(
-        "jp_finance", "日本金融", "日本の金融",
+        "jp_finance", "国内金融", "日本の金融",
         "日銀の政策・金利・為替・株価・銀行・保険・証券・金融庁の施策など",
         "#B08968", rss_collector("jp_finance", [FSA_NEWS, YAHOO_BUSINESS, NHK_ECONOMY]),
     ),
     Topic(
-        "jp_it", "日本IT", "日本のIT",
+        "jp_it", "国内IT", "日本のIT",
         "国内のITサービス・企業・AI・サイバーセキュリティ・デジタル政策など",
         "#8E6C88", rss_collector("jp_it", [ITMEDIA_ALL, ITMEDIA_AI, YAHOO_IT]),
     ),
