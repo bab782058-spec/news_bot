@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AI学習の一括拒否、主要各社が新規格に対応表明</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--card:#f1f4f8;--accent:#2d3e50;--link:#3d5f94}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--fg:#e8eaed;--sub:#9aa3ad;--card:#1f262e;--accent:#2d3e50;--link:#8fb0e0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
+header{background:var(--accent);color:#fff;padding:14px 20px;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:1.35rem;line-height:1.5;margin:0 0 8px}
+h2{font-size:1.1rem;line-height:1.5;margin:1.8em 0 .6em;padding-left:.6em;border-left:4px solid var(--link)}
+.meta{color:var(--sub);font-size:.85rem;margin-bottom:20px}
+.tag{display:inline-block;color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:0 .8em;margin-right:.6em;line-height:1.7}
+.lead{background:var(--card);border-radius:10px;padding:14px 16px;margin:0 0 24px;font-weight:600}
+p{margin:0 0 1.1em;font-size:1.02rem}
+.note{color:var(--sub);font-size:.85rem;border:1px dashed var(--sub);border-radius:8px;padding:8px 12px;margin:0 0 20px}
+.src{margin-top:32px;padding-top:16px;border-top:1px solid var(--card);font-size:.85rem;color:var(--sub)}
+.src p{font-size:.85rem;margin:0 0 .6em}
+a{color:var(--link)}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{padding:14px 0;border-bottom:1px solid var(--card)}
+ul.list .t{font-weight:700}
+ul.list .o{color:var(--sub);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>🌍 Today&#x27;s 7 Topics</header>
+<main>
+<h1>AI学習の一括拒否、主要各社が新規格に対応表明</h1>
+<div class="meta"><span class="tag" style="background:#8E6C88">国内IT</span>ITmedia ・ 2026年11月2日(月)</div>
+<div class="lead">OpenAIやGoogleなどは、Web管理者がrobots.txtを用いてAIのコンテンツ学習を一括拒否できる共通の仕組みへの対応を発表した。</div>
+
+<h2>AI学習の拒否・許可を共有する共通規格提案の背景と概要</h2>
+<p>2024年10月30日（現地時間）、米OpenAI、米Google、米Microsoftの各社は、Webサイトの運営者がAI学習へのコンテンツ利用に関する自らの意向を複数のAI企業にまとめて伝えることができる共通の仕組みに対応する方針を発表した。また、米Anthropicにおいても実装に向けた取り組みが進められている。</p>
+<p>従来、Webサイト運営者が自らのコンテンツをAIの学習に利用されたくない場合、AI企業ごとに異なるクローラーを識別し、それぞれの仕様に合わせた個別ルールを書き分ける必要があり、大きな管理負担となっていた。こうした状況の背景には、AI企業によるコンテンツ利用を巡ってパブリッシャーによる訴訟が相次いでいる現状がある。これに対し、米Cloudflareは7月、AI関連クローラーを「検索」「エージェント」「学習」の用途別に制御できる機能を全顧客向けに開放したほか、Googleも6月にSearch ConsoleにおいてAI検索機能へのコンテンツ利用をオプトアウトできるトグルを提供すると発表していた。今回の取り組みは、AI学習に関する業界共通の制御手段を求めてきたパブリッシャーや市民団体、規制当局などの声を反映したものであり、robots.txtを機械可読な意思表示の主要な手段として認める欧州連合（EU）のAI規制法「EU AI Act」に基づく汎用AIモデル提供者向け行動規範とも整合している。</p>
+<h2>robots.txtを用いた一括指定の具体的な仕組みと動作仕様</h2>
+<p>今回発表された仕組みは、標準化団体であるIETF（Internet Engineering Task Force）のAI Preferences（AIPREF）ワーキンググループにおける議論を基礎としている。Anthropicの標準化担当者であるケビン・ケリー氏が、10月30日付で「Machine-Readable Training Preference Signal」と題したInternet-Draft（インターネット標準の草案）を提出した。なお、現時点においてこのドラフトはケリー氏個人名義での提出にとどまり、IETFの標準化プロセスにおける正式な地位を持つものではない。</p>
+<p>具体的な仕組みとして、Webサイトへのクローラーのアクセスを制御する既存のファイルである「robots.txt」に対し、共通のシグナル（ポリシートークン）を記述することで意向を一括表明する。ドラフトによれば、robots.txtの「User-Agent」行に「__usage_ai-training」というトークンを指定し、その下で「Disallow」と記述すればAI学習利用の拒否を、「Allow」と記述すれば許可を示すことができる。たとえば、「User-Agent: __usage_ai-training」の下に「Disallow: /」および「Allow: /press-kit/」と記載した場合、/press-kit/以下のパスを除いた全てのコンテンツについて学習利用を拒否するという意思表示になる。</p>
+<p>本指定は、従来のクロール制御とは独立して機能するものであり、コンテンツのクロールそのものを禁止するわけではない。クロール自体を制限したい場合は、従来通り各クローラー向けのルールを併用する必要がある。また、共通トークンが記述されていない場合は、AI学習に関する特別な意向表明はなされていないと解釈される。新しいディレクティブや構文を導入していないため、既存の解析プログラム（パーサー）の動作に影響を与えることもない。</p>
+<p>対象となる「AI学習」は、生成AIモデルの学習済みパラメータを変更するためのコンテンツ利用と定義されており、生成以外の用途のみに使用されるモデルの学習は含まれない。さらに、各企業が独自に提供する制御手段を共通シグナルより優先させることや、個別の契約に基づいて異なる取り扱いを行うことも認められている。</p>
+<h2>OpenAIとAnthropicにおける対応方針と進行状況</h2>
+<p>OpenAIは、各社がこの共通シグナルに対応することでWebサイト運営者の負担を大幅に軽減できるとの考えを示している。同社は今後数カ月以内での対応を目指しており、実際に実装する段階で詳細を改めて公表する計画だ。なお、robots.txtによる既存のクローラー制御についても引き続き適用される。同社は他のAI企業に対しても、この共通シグナルを尊重するよう呼び掛けている。</p>
+<p>一方、Anthropicに関しては、ドラフトを提出したケビン・ケリー氏がAIPREFのメーリングリストにおいて、同社がすでにドラフトへの対応実装に着手したことを報告している。ただし、Anthropicの提供するサービス全体に対応を広げるには、なお一定の時間を要する見通しとなっている。</p>
+<h2>Googleによる2027年の適用計画と独自手段との連携</h2>
+<p>Googleは他のAI企業と足並みをそろえ、2027年における対応を目指す方針を明らかにした。同社では、Webサイトが共通シグナルによってAI学習への利用拒否を示しており、かつ同社独自の制御手段である「Google-Extended」に関する明示的な指定を行っていない場合には、Google-Extendedによる利用についても拒否されたものとして扱うルールを設ける。</p>
+<p>「Google-Extended」はGoogleが2023年から提供を開始したAI学習向けの制御手段であり、共通シグナルが導入された後も引き続き利用することが可能である。Webサイト側がGoogle-Extendedによるコンテンツ利用を明示的に許可している場合、GeminiアプリがWebコンテンツを参照して回答を生成する「グラウンディング」の対象に含まれることになる。これにより、アプリの回答内でコンテンツが紹介され、Webサイトへのクリックを獲得できる可能性があるとしている。</p>
+<h2>Microsoftの移行スケジュールと独自のページ単位・グラウンディング制御</h2>
+<p>Microsoftは2027年2月1日より、Webページをクロールする際に新たな設定を読み取り、適用を開始することを発表した。同社はrobots.txtでの共通シグナル指定に加え、metaタグやHTTPヘッダを利用してページ単位でもAI学習利用の可否を指定できるようにし、これらをrobots.txtの設定よりも優先させる仕組みを提供する。</p>
+<p>さらに、AIが回答を生成する際にWebコンテンツを参照する「グラウンディング」についても、独自のページ単位の制御を導入する。具体的には「Disallow」による利用拒否のほか、「DisallowExtended」という設定も用意される。「DisallowExtended」を指定した場合、CopilotやMicrosoft 365といったMicrosoft自身が提供するサービスでのコンテンツ利用は認められるものの、同社が外部企業向けに提供する「Web IQ」やMicrosoft FoundryのAPIを通じたグラウンディングでの利用を拒否することができる。なお、これらの制御設定はBingの検索結果への掲載には影響を及ぼさない。</p>
+<p>これらの新設定は従来の「NoArchive」や「NoCache」に代わるものであり、Microsoftはこれらを設定しているサイト運営者に対して2027年3月1日までに新設定へ移行するよう求めている。また、グラウンディングの制限状態を維持しつつ再クロールを待つための経過措置として、Bing Webmaster Toolsでの暫定設定が必要になるとしている。</p>
+<div class="src">
+<p>原文: <a href="https://www.itmedia.co.jp/news/article/2611/01/2000002776/" rel="noopener noreferrer" target="_blank">ITmedia</a>(外部サイト・原文の言語で表示されます)</p>
+<p>この解説はGeminiが原文をもとに日本語で要約・再構成したものです。正確な内容は原文でご確認ください。</p>
+<p><a href="index.html">← 今日のニュースに戻る</a></p>
+</div>
+</main>
+</body>
+</html>
