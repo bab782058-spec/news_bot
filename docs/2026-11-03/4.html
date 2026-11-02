@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AI学習拒否をrobots.txtで一括指定へ</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--card:#f1f4f8;--accent:#2d3e50;--link:#3d5f94}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--fg:#e8eaed;--sub:#9aa3ad;--card:#1f262e;--accent:#2d3e50;--link:#8fb0e0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
+header{background:var(--accent);color:#fff;padding:14px 20px;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:1.35rem;line-height:1.5;margin:0 0 8px}
+h2{font-size:1.1rem;line-height:1.5;margin:1.8em 0 .6em;padding-left:.6em;border-left:4px solid var(--link)}
+.meta{color:var(--sub);font-size:.85rem;margin-bottom:20px}
+.tag{display:inline-block;color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:0 .8em;margin-right:.6em;line-height:1.7}
+.lead{background:var(--card);border-radius:10px;padding:14px 16px;margin:0 0 24px;font-weight:600}
+p{margin:0 0 1.1em;font-size:1.02rem}
+.note{color:var(--sub);font-size:.85rem;border:1px dashed var(--sub);border-radius:8px;padding:8px 12px;margin:0 0 20px}
+.src{margin-top:32px;padding-top:16px;border-top:1px solid var(--card);font-size:.85rem;color:var(--sub)}
+.src p{font-size:.85rem;margin:0 0 .6em}
+a{color:var(--link)}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{padding:14px 0;border-bottom:1px solid var(--card)}
+ul.list .t{font-weight:700}
+ul.list .o{color:var(--sub);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>🌍 Today&#x27;s 7 Topics</header>
+<main>
+<h1>AI学習拒否をrobots.txtで一括指定へ</h1>
+<div class="meta"><span class="tag" style="background:#8E6C88">国内IT</span>ITmedia AI+ ・ 2026年11月3日(火)</div>
+<div class="lead">OpenAIやGoogleなどは、AI学習へのコンテンツ利用拒否をrobots.txtで一括指定できる共通の仕組みに対応すると発表した。</div>
+
+<h2>AI学習拒否を一括指定する新たな共通規格の提案</h2>
+<p>10月30日（現地時間）、米OpenAI、米Google、米Microsoftの主要AI企業3社は、Webサイトの運営者がAI学習へのコンテンツ利用に関する意向を複数の企業へ一括して伝えられる共通の仕組みに対応する方針を相次いで発表した。米Anthropicにおいても、担当者が実装を進めていることを明かしている。</p>
+<p>この取り組みの基盤となっているのは、Anthropicで標準化を担当するケビン・ケリー氏が同日付でインターネット標準化団体であるIETF（Internet Engineering Task Force）に提出した草案（Internet-Draft）「Machine-Readable Training Preference Signal」である。本提案は、IETFのAI Preferences（AIPREF）ワーキンググループにおける議論を背景に生まれたものであり、提出時点ではケリー氏の個人名義となっているため、IETFの正式な標準化プロセス上のステータスはまだ獲得していない。</p>
+<p>従来の環境では、Webサイト運営者がAI企業によるコンテンツの学習利用を制御しようとする場合、各AI企業のクローラーを個別に識別し、それぞれの仕様に合わせて記述を書き分けるという煩雑な作業が必要であった。これに対して導入が提案された新しい仕組みでは、Webサイトのクローラーアクセスを制御する既存のファイルである「robots.txt」に共通のシグナルを書き込むだけで、複数のAI企業に対して一括して学習利用の許可や拒否の意向を示すことが可能となる。OpenAIは、業界各社がこの共通シグナルに対応することで、コンテンツを提供するWebサイト運営者の作業負担が大幅に軽減されると説明している。</p>
+<h2>robots.txtにおける共通シグナルの仕様とAI学習の定義</h2>
+<p>草案「Machine-Readable Training Preference Signal」で提示されている具体的な記述方法は、robots.txtの「User-Agent」行に対して「__usage_ai-training」というポリシートークンを指定する形をとる。このトークンを設定した上で、従来の記述と同様に「Disallow」を用いてAI学習への利用拒否を示し、「Allow」を用いて許可を示す仕組みである。</p>
+<p>例えば、robots.txt内に「User-Agent: __usage_ai-training」と記述し、その直下に「Disallow: /」および「Allow: /press-kit/」と指定した場合、Webサイト内の「/press-kit/」配下のパスを除いたすべてのコンテンツをAIの学習に使用しないよう求める意思表示となる。共通トークンによる記述を行わなかったサイトについては、AI学習に関する特別な意向を表明していないものとして扱われる。また、この仕様は新しいディレクティブや文法を導入しないため、既存の解析プログラム（パーサー）の動作に支障をきたさない。</p>
+<p>この指定はあくまでAI学習に対する意思表示であり、コンテンツそのもののクロール（収集）を制限する従来のアクセス制御とは独立している。クロール自体を拒否したい場合には、従来通り各クローラーに向けたルールを別途記述する必要がある。</p>
+<p>本提案において対象とされる「AI学習」とは、生成AIモデルの学習済みパラメータを変更する目的でコンテンツを利用することを指すと定義されている。そのため、生成用途以外でのみ使用されるモデルの学習は含まれない。さらに、本仕様ではAI企業各社が独自に提供している既存の制御手段を共通シグナルより優先することや、個別の契約に基づいて異なる対応を行うことも認められている。</p>
+<h2>各AI企業の導入予定時期と対応のアプローチ</h2>
+<p>共通シグナルへの対応方針を表明した各社であるが、その実装時期や運用アプローチには差異が存在する。</p>
+<p>OpenAIは今後数カ月以内での対応完了を目指しており、実際の適用時には詳細を改めて公表する予定である。従来のrobots.txtによるクローラー制御ルールは引き続き適用され、同社は他のAI企業に対してもこの共通シグナルを尊重するよう呼びかけている。</p>
+<p>Anthropicについては、提案者であるケリー氏がAIPREFのメーリングリストにて、同社がすでに草案に沿った実装を開始したことを報告した。ただし、同社が提供するサービス全体へ対応を普及させるには相応の時間を要するとしている。</p>
+<p>一方、GoogleとMicrosoftは2027年を軸としたタイムラインを設定している。</p>
+<p>Googleは他社とともに2027年中の対応を目指している。同社は2023年から独自のAI学習制御手段として「Google-Extended」を提供してきたが、共通シグナルの導入後もこれを継続して利用可能とする。Webサイトが共通シグナルでAI学習を拒否し、Google-Extendedに関する明示的な指定を行っていない場合、同社はGoogle-Extendedによる学習利用も拒否されたものと解釈して処理する方針である。</p>
+<p>Google-Extendedによる利用を明示的に許可したWebサイトは、同社のGeminiアプリがWebコンテンツを参照して回答を生成する機能「グラウンディング」の対象となる。これにより、アプリの回答内でサイトが紹介され、アクセス（クリック）を獲得できる可能性があるとしている。</p>
+<h2>Microsoftの独自制御機能と移行に向けた経過措置</h2>
+<p>Microsoftは2027年2月1日から、クロール時に新しい共通設定の読み取りと適用を開始する。同社はrobots.txtでの設定に加え、HTMLのmetaタグやHTTPヘッダを利用してページ単位でAI学習の可否を指定できる仕組みも提供し、これらをrobots.txtの記述よりも優先して処理する方針をとる。</p>
+<p>また、AIが回答を作成する際にWeb上の情報を引き出すグラウンディング機能に関しても、Microsoftは独自のページ単位制御を導入する。グラウンディング利用を拒否する「Disallow」のほか、「DisallowExtended」という特別な設定も用意される。「DisallowExtended」は、CopilotやMicrosoft 365といったMicrosoft自社のサービスでの情報利用を許可しつつ、同社が外部企業向けに展開している「Web IQ」やMicrosoft FoundryのAPIを経由したグラウンディングでの利用を拒否するための設定である。なお、これらのグラウンディングに関する制御設定を行っても、Bingの検索結果一覧へのWebサイト掲載には影響しない。</p>
+<p>この新設定の導入は、従来の「NoArchive」や「NoCache」といった設定を置き換えるものであるため、Microsoftはこれらを利用しているサイト運営者に対し、2027年3月1日までに新しい設定方法へ移行するよう求めている。あわせて、再クロールが行われるまでの期間にグラウンディングの制限を維持したい場合は、Bing Webmaster Toolsにおいて暫定的な設定を行う必要があるとしている。</p>
+<h2>法的規制の動向とパブリッシャーを巡る背景</h2>
+<p>今回の各社による共通シグナル採用の動きは、AI学習を巡るWebメディアやパブリッシャーとの摩擦、ならびに世界的な規制の波を背景にしている。AI企業による無断でのコンテンツ利用に対しては、パブリッシャー側からの訴訟が相次いで発生しており、権利保護の仕組みづくりが強く求められていた。</p>
+<p>Googleは今回の取り組みについて、AI学習に関する業界共通の制御手段を要望してきたパブリッシャー、市民団体、規制当局の声を反映したものだと説明する。さらに、robots.txtを機械判読可能な意思表示の主要ツールとして認める欧州連合（EU）のAI規制法「EU AI Act」に基づいた、汎用AIモデル提供者向けの行動規範とも整合性を保つ設計であるとしている。</p>
+<p>AIクローラーやコンテンツの取り扱いに関しては周辺企業も動きを見せている。米Cloudflareは7月、同社の全顧客向けに、AIクローラーを「検索」「エージェント」「学習」の用途ごとに区分して管理できる機能を解放した。Google自身も6月に、AI検索機能に対するコンテンツ利用をオプトアウトするための専用トグルをSearch Console上で提供すると発表している。今回の共通シグナル提案と各社の対応表明により、コンテンツ保護とAI学習の運用における標準化が一段と進むことになる。</p>
+<div class="src">
+<p>原文: <a href="https://www.itmedia.co.jp/news/article/2611/01/2000002776/" rel="noopener noreferrer" target="_blank">ITmedia AI+</a>(外部サイト・原文の言語で表示されます)</p>
+<p>この解説はGeminiが原文をもとに日本語で要約・再構成したものです。正確な内容は原文でご確認ください。</p>
+<p><a href="index.html">← 今日のニュースに戻る</a></p>
+</div>
+</main>
+</body>
+</html>
