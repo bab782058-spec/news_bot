@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ロート製薬で280万人分の個人情報が漏えい</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--card:#f1f4f8;--accent:#2d3e50;--link:#3d5f94}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--fg:#e8eaed;--sub:#9aa3ad;--card:#1f262e;--accent:#2d3e50;--link:#8fb0e0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
+header{background:var(--accent);color:#fff;padding:14px 20px;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:1.35rem;line-height:1.5;margin:0 0 8px}
+h2{font-size:1.1rem;line-height:1.5;margin:1.8em 0 .6em;padding-left:.6em;border-left:4px solid var(--link)}
+.meta{color:var(--sub);font-size:.85rem;margin-bottom:20px}
+.tag{display:inline-block;color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:0 .8em;margin-right:.6em;line-height:1.7}
+.lead{background:var(--card);border-radius:10px;padding:14px 16px;margin:0 0 24px;font-weight:600}
+p{margin:0 0 1.1em;font-size:1.02rem}
+.note{color:var(--sub);font-size:.85rem;border:1px dashed var(--sub);border-radius:8px;padding:8px 12px;margin:0 0 20px}
+.src{margin-top:32px;padding-top:16px;border-top:1px solid var(--card);font-size:.85rem;color:var(--sub)}
+.src p{font-size:.85rem;margin:0 0 .6em}
+a{color:var(--link)}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{padding:14px 0;border-bottom:1px solid var(--card)}
+ul.list .t{font-weight:700}
+ul.list .o{color:var(--sub);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>🌍 Today&#x27;s 7 Topics</header>
+<main>
+<h1>ロート製薬で280万人分の個人情報が漏えい</h1>
+<div class="meta"><span class="tag" style="background:#8E6C88">国内IT</span>ITmedia ・ 2026年11月7日(土)</div>
+<div class="lead">ロート製薬の通販システムが不正アクセスを受け、顧客約280万人分の個人情報やクレジットカード情報が漏えいしたと発表。</div>
+
+<h2>大規模な個人情報漏えいの全容と影響範囲</h2>
+<p>大阪市に本社を置くロート製薬は、自社で運営する通信販売システムに対する第三者からの不正アクセス被害について調査を行った結果、大規模な個人情報漏えいが発生していたことを発表した。この発表は11月6日に行われたもので、被害を受けた顧客の総数は279万7545人に上ることが明らかになった。本件については、同社が9月11日の段階で通信販売システムへの不正アクセスの事実を初期情報として公表していたが、その後の詳細な調査によって被害の具体的な規模が確定した形となる。</p>
+<p>外部へ漏えいした個人情報は、同社が運用する複数の顧客管理システム内に保管されていたデータである。具体的に漏えいが確認された項目には、顧客の氏名、住所、電話番号が含まれている。ただし、これらの漏えい項目はすべての対象者において一律ではなく、漏えいの対象となった顧客ごとに保存されていたデータの内容や項目が異なっていることが判明している。</p>
+<h2>流出した通話音声データとクレジットカード情報の詳細</h2>
+<p>顧客管理システムからの個人情報漏えいに加え、同社の電話システムに保存されていた通話音声データについても、第三者によって不正に取得されていたことが調査により判明した。不正取得の対象となったのは、2025年9月10日から26年9月5日までの一部期間に記録された通話音声データである。</p>
+<p>この流出した通話音声データの分析を行ったところ、一部のデータに顧客の重要な金融情報が含まれていることが確認された。具体的には、音声データが不正取得された顧客のうち9715人分について、電話口でやり取りされたクレジットカード番号およびカードの有効期限の情報が含まれていた。一方で、決済時の本人認証に使われるセキュリティコードやパスワードなどの各種認証情報については、今回不正取得されたデータの中には含まれていないことが分かっている。</p>
+<h2>不正アクセス発覚の経緯と攻撃の手口</h2>
+<p>今回の不正アクセス事案が発覚した契機は、同社が通信販売事業のために利用している電話システムのサービス事業者からの連絡であった。9月10日、当該のサービス事業者からロート製薬に対し、電話システムにおいて不審なアクセスが検知された旨の報告が寄せられた。</p>
+<p>報告を受けた同社は直ちに調査を開始し、外部の専門機関と連携しながら事態の把握と原因の究明を進めた。その結果、攻撃を行った第三者は、まず電話システムのアカウント情報を何らかの方法で不正に利用して同システム内へ侵入を果たしていたことが判明した。さらに攻撃者は、侵入した電話システムを中継点として経由し、接続されていた複数の顧客管理システムへアクセスを広げ、最終的に保存されていた大量の顧客情報を取得するに至ったという侵入経路および手口が特定された。</p>
+<h2>被害対象となった顧客への支援とカード会社との連携</h2>
+<p>個人情報の漏えいが確認された対象の顧客に対して、ロート製薬は順次連絡を行っている。連絡の手段としては、対象者の登録状況に応じて郵送や電子メールなどを活用し、個別に事態の周知と注意喚起を進めている。</p>
+<p>特にクレジットカード情報が流出した9715人分の顧客への対応として、同社は各クレジットカード会社との間で連携体制を構築している。カード会社に対しては、流出したカード情報を用いた不正利用が発生しないよう監視（モニタリング）の強化を要請している。また、顧客が不正利用のリスクを回避するためにクレジットカードの再発行を行う場合、その再発行にかかる費用を対象となった顧客自身が負担せずに済むよう、各カード会社に対して配慮を依頼する措置を講じている。</p>
+<h2>再発防止に向けた取り組みと現在の被害状況</h2>
+<p>ロート製薬は今回の事案を受け、今後の安全性を確保するための再発防止策をただちに実施した。システム面における緊急の対応として、今回の不正アクセスに関連するすべてのアカウントのパスワードを一斉に変更し、不正な侵入経路の遮断を行った。</p>
+<p>さらに、業務運用上のリスクを低減するための抜本的な見直しも行った。従来は電話口において顧客からクレジットカード番号を聴取する運用を行っていたが、この仕組み自体を完全に停止することを決定した。これに伴い、通信販売における決済手続きについては、電話口での情報聞き取りを行わない書面による支払い手続きへと運用を全面的に切り替えている。</p>
+<p>なお、同社によれば、11月6日の発表時点において、今回発生した個人情報およびクレジットカード情報の漏えいに起因する二次被害の発生は確認されていないとしている。</p>
+<div class="src">
+<p>原文: <a href="https://www.itmedia.co.jp/news/article/2611/06/2000002984/" rel="noopener noreferrer" target="_blank">ITmedia</a>(外部サイト・原文の言語で表示されます)</p>
+<p>この解説はGeminiが原文をもとに日本語で要約・再構成したものです。正確な内容は原文でご確認ください。</p>
+<p><a href="index.html">← 今日のニュースに戻る</a></p>
+</div>
+</main>
+</body>
+</html>
