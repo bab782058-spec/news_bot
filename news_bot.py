@@ -17,6 +17,7 @@
 - PAGES_BASE_URL (任意。未指定なら GITHUB_REPOSITORY から https://<owner>.github.io/<repo> を組み立てる)
 """
 
+import calendar
 import datetime
 import html
 import json
@@ -45,13 +46,16 @@ NEWS_JSON = OUT_DIR / "news.json"
 REQUEST_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; news-summary-bot)"}
 REQUEST_TIMEOUT_SECONDS = 15
 
-MAX_ITEMS_PER_FEED = 10
+MAX_ITEMS_PER_FEED = 20  # 新しい順に、フィード1本あたり最大何件を候補にするか
+MAX_HEADLINE_AGE_DAYS = 3  # これより古い見出し(公開日が分かるものだけ)は候補にしない
+HISTORY_DAYS = 7  # 何日前までに配信したニュースを「配信済み」として扱うか
+MAX_RECENT_TITLES_IN_PROMPT = 60  # 選定時に「配信済み」として見せる見出しの最大数
 HEADLINE_SUMMARY_LIMIT = 200  # 選定用に渡す、見出しごとの概要の最大文字数
 ARTICLE_TEXT_LIMIT = 12000  # 詳細解説のために読み込む本文の最大文字数(1記事あたり)
 DETAIL_INTERVAL_SECONDS = 2  # 無料枠のレート制限に配慮して、詳細解説の間に空ける間隔
 
 CARD_TITLE = "Today's 7 Topics"
-EMPTY_TOPIC_NOTICE = "[WARN] 「{name}」は見出しを1件も取得できなかったため、今日は載せません"
+EMPTY_TOPIC_NOTICE = "[WARN] 「{name}」は新しい見出しが1件もなかったため(取得失敗、または配信済み)、今日は載せません"
 
 # ---- カードの見た目(縦の長さを調整したいときは、ここの値を変える) ----
 # Flexの余白トークンは none(0) / xs(2px) / sm(4px) / md(8px) / lg(12px) / xl(16px) / xxl(20px)
@@ -89,6 +93,7 @@ class Topic:
     guideline: str  # このテーマで何を選ぶか(テーマ同士の境目を決める)
     color: str
     collect: Callable[[], list]  # 引数なしで呼ぶと、このテーマの見出し(Headline)一覧を返す
+    avoid_repeats: bool = True  # 配信済みのニュースを選ばない。天気のように毎日同じリンクのものは False
 
 
 CARD_FIELDS = ("label", "color", "title", "overview", "page_url")  # send コマンドが使う項目
@@ -108,6 +113,7 @@ class NewsItem:
     link: str
     body: str = ""
     page_url: str = ""
+    avoid_repeats: bool = True  # 配信履歴に記録して、次回以降は選ばない
 
     def to_card(self):
         """send コマンドに渡す、カード表示に必要な項目だけ"""
@@ -123,24 +129,40 @@ def strip_html(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
+def entry_timestamp(entry):
+    """RSS項目の公開日時(UNIX秒)。日付が書かれていなければ None"""
+    parsed = getattr(entry, "published_parsed", None) or getattr(entry, "updated_parsed", None)
+    return calendar.timegm(parsed) if parsed else None
+
+
 @lru_cache(maxsize=None)
 def fetch_feed_entries(source_name, url):
-    """RSSを1本取得して、(見出し, 概要, リンク)の組を返す。複数テーマで共有するフィードは1回しか取りに行かない"""
+    """RSSを1本取得して、新しい順に(見出し, 概要, リンク)の組を返す。
+
+    - フィードの並び順は信用せず、公開日時で並べ直す(日付のない項目は、元の順のまま後ろに置く)
+    - MAX_HEADLINE_AGE_DAYS より古い項目は除く
+    - 複数テーマで共有するフィードは、1回しか取りに行かない
+    """
     try:
         feed = feedparser.parse(url)
     except Exception as error:
         print(f"[WARN] {source_name} の取得に失敗: {error}", file=sys.stderr)
         return ()
 
-    entries = []
-    for entry in feed.entries[:MAX_ITEMS_PER_FEED]:
+    oldest_allowed = time.time() - MAX_HEADLINE_AGE_DAYS * 24 * 3600
+    dated_entries = []
+    for entry in feed.entries:
         title = strip_html(getattr(entry, "title", ""))
         link = getattr(entry, "link", "").strip()
-        if title and link:
+        timestamp = entry_timestamp(entry)
+        if title and link and (timestamp is None or timestamp >= oldest_allowed):
             summary = strip_html(getattr(entry, "summary", ""))[:HEADLINE_SUMMARY_LIMIT]
-            entries.append((title, summary, link))
+            dated_entries.append((timestamp, (title, summary, link)))
 
-    print(f"[INFO] {source_name}: {len(entries)}件取得")
+    dated_entries.sort(key=lambda pair: -(pair[0] or 0))  # 安定ソート: 日付なしは元の順のまま末尾へ
+    entries = [entry for _, entry in dated_entries[:MAX_ITEMS_PER_FEED]]
+
+    print(f"[INFO] {source_name}: {len(entries)}件取得(直近{MAX_HEADLINE_AGE_DAYS}日・新しい順)")
     return tuple(entries)
 
 
@@ -203,6 +225,7 @@ def collect_kanto_weather():
 NHK_POLITICS = ("NHKニュース(政治)", "https://www3.nhk.or.jp/rss/news/cat4.xml")
 NHK_ECONOMY = ("NHKニュース(経済)", "https://www3.nhk.or.jp/rss/news/cat5.xml")
 NHK_TOP = ("NHKニュース(主要)", "https://www3.nhk.or.jp/rss/news/cat0.xml")
+YAHOO_DOMESTIC = ("Yahoo!ニュース(国内)", "https://news.yahoo.co.jp/rss/topics/domestic.xml")
 YAHOO_BUSINESS = ("Yahoo!ニュース(経済)", "https://news.yahoo.co.jp/rss/topics/business.xml")
 YAHOO_IT = ("Yahoo!ニュース(IT)", "https://news.yahoo.co.jp/rss/topics/it.xml")
 FSA_NEWS = ("金融庁 新着情報", "https://www.fsa.go.jp/fsaNewsListAll_rss2.xml")
@@ -216,29 +239,29 @@ TECHCRUNCH = ("TechCrunch", "https://techcrunch.com/feed/")
 # 配信するテーマ。この並び順でカードに表示される。1テーマ1件。
 TOPICS = [
     Topic(
-        "jp_politics", "国内政治", "日本の政治",
+        "jp_politics", "日本政治", "日本の政治",
         "国会・内閣・政党・選挙・外交・安全保障など、日本の政治に関するもの",
-        "#4A6FA5", rss_collector("jp_politics", [NHK_POLITICS, NHK_TOP]),
+        "#4A6FA5", rss_collector("jp_politics", [NHK_POLITICS, NHK_TOP, YAHOO_DOMESTIC]),
     ),
     Topic(
-        "jp_economy", "国内経済", "日本の経済",
+        "jp_economy", "日本経済", "日本の経済",
         "景気・物価・賃金・雇用・企業業績・貿易・産業など。金利・為替・株価・金融機関の話題は「日本の金融」に回す",
         "#5C8374", rss_collector("jp_economy", [NHK_ECONOMY, YAHOO_BUSINESS]),
     ),
     Topic(
-        "jp_finance", "国内金融", "日本の金融",
+        "jp_finance", "日本金融", "日本の金融",
         "日銀の政策・金利・為替・株価・銀行・保険・証券・金融庁の施策など",
         "#B08968", rss_collector("jp_finance", [FSA_NEWS, YAHOO_BUSINESS, NHK_ECONOMY]),
     ),
     Topic(
-        "jp_it", "国内IT", "日本のIT",
+        "jp_it", "日本IT", "日本のIT",
         "国内のITサービス・企業・AI・サイバーセキュリティ・デジタル政策など",
         "#8E6C88", rss_collector("jp_it", [ITMEDIA_ALL, ITMEDIA_AI, YAHOO_IT]),
     ),
     Topic(
         "kanto_weather", "関東天気", "関東の天候",
         "見出しは1件だけ。それを選び、今日から明日にかけての天気の要点(雨・気温・風・注意点)をあらすじにまとめる",
-        "#3F8E9B", collect_kanto_weather,
+        "#3F8E9B", collect_kanto_weather, avoid_repeats=False,
     ),
     Topic(
         "world_finance", "世界金融", "世界の金融",
@@ -253,18 +276,90 @@ TOPICS = [
 ]
 
 
-def collect_headlines():
-    """全テーマの見出しを集めて、通し番号(id)を振る。見出しが取れなかったテーマは、ログに残して飛ばす"""
+# ---------------------------------------------------------------
+# 配信履歴(同じニュースを何日も選ばないための記憶。docs/history.json に保存し、docs/ と一緒にコミットされる)
+# ---------------------------------------------------------------
+HISTORY_FILE_NAME = "history.json"
+DAY_FOLDER_PATTERN = re.compile(r"\d{4}-\d{2}-\d{2}")
+
+
+def history_path():
+    return DOCS_DIR / HISTORY_FILE_NAME
+
+
+def oldest_history_day(today_iso):
+    return (datetime.date.fromisoformat(today_iso) - datetime.timedelta(days=HISTORY_DAYS)).isoformat()
+
+
+def backfill_history_from_pages(today_iso):
+    """履歴ファイルがまだ無いとき、過去に生成済みの詳細ページ(docs/日付/N.html)から、見出しと原文リンクを復元する。
+
+    最初の1回だけ使う。ページの形式が違って読めないものは、黙って飛ばす(ベストエフォート)"""
+    history = {}
+    if not DOCS_DIR.is_dir():
+        return history
+    for day_dir in sorted(DOCS_DIR.iterdir()):
+        if not (day_dir.is_dir() and DAY_FOLDER_PATTERN.fullmatch(day_dir.name)):
+            continue
+        if not oldest_history_day(today_iso) <= day_dir.name < today_iso:
+            continue
+        for page in sorted(day_dir.glob("[0-9]*.html")):
+            text = page.read_text(encoding="utf-8", errors="ignore")
+            title = re.search(r"<h1>(.*?)</h1>", text, re.S)
+            link = re.search(r'class="src">\s*<p>原文: <a href="(https?://[^"]+)"', text)
+            if title and link and html.unescape(link.group(1)) != JMA_FORECAST_PAGE:
+                history.setdefault(day_dir.name, []).append(
+                    {"title": html.unescape(title.group(1)), "link": html.unescape(link.group(1))}
+                )
+    return history
+
+
+def load_history(today_iso):
+    """{日付: [{"title", "link"}, ...]}。ファイルが無ければ過去ページから復元、壊れていれば空にする"""
+    path = history_path()
+    if not path.exists():
+        history = backfill_history_from_pages(today_iso)
+        print(f"[INFO] 配信履歴がないため、過去ページから復元しました({sum(len(v) for v in history.values())}件)")
+        return history
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        print(f"[WARN] 配信履歴を読めませんでした(空として続行): {error}", file=sys.stderr)
+        return {}
+
+
+def recent_entries(history, today_iso):
+    """直近HISTORY_DAYS日に配信したニュース。今日の分は含めない(同じ日に実行し直したとき、選び直せるように)"""
+    oldest = oldest_history_day(today_iso)
+    return [entry for day, entries in sorted(history.items()) if oldest <= day < today_iso for entry in entries]
+
+
+def save_history(history, today_iso, items):
+    oldest = oldest_history_day(today_iso)
+    kept = {day: entries for day, entries in history.items() if day >= oldest}
+    kept[today_iso] = [{"title": item.title, "link": item.link} for item in items if item.avoid_repeats]
+    history_path().write_text(json.dumps(kept, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def collect_headlines(sent_links=frozenset()):
+    """全テーマの見出しを集めて、通し番号(id)を振る。
+
+    配信済み(sent_links)のリンクは除く。見出しが1件も残らなかったテーマは、ログに残して飛ばす"""
     headlines = []
     for topic in TOPICS:
         topic_headlines = topic.collect()
+        if topic.avoid_repeats:
+            fresh = [h for h in topic_headlines if h.link not in sent_links]
+            if len(fresh) < len(topic_headlines):
+                print(f"[INFO] 「{topic.prompt_name}」: 配信済みの{len(topic_headlines) - len(fresh)}件を除外")
+            topic_headlines = fresh
         if not topic_headlines:
             print(EMPTY_TOPIC_NOTICE.format(name=topic.prompt_name), file=sys.stderr)
         for headline in topic_headlines:
             headlines.append(replace(headline, id=len(headlines)))
 
     if not headlines:
-        raise RuntimeError("どのテーマからも見出しを取得できませんでした")
+        raise RuntimeError("どのテーマにも、新しい見出しがありませんでした")
     return headlines
 
 
@@ -285,7 +380,7 @@ def fetch_article_text(url):
 # ---------------------------------------------------------------
 # Geminiで、テーマごとに1件を選ぶ
 # ---------------------------------------------------------------
-def build_selection_prompt(headlines):
+def build_selection_prompt(headlines, recent_titles=()):
     sections = []
     for topic in TOPICS:
         topic_headlines = [h for h in headlines if h.topic_key == topic.key]
@@ -295,6 +390,15 @@ def build_selection_prompt(headlines):
         lines += [f"[{h.id}] ({h.source}) {h.title}\n概要: {h.summary}" for h in topic_headlines]
         sections.append("\n\n".join(lines))
 
+    recent_rule, recent_section = "", ""
+    if recent_titles:
+        shown = list(recent_titles)[-MAX_RECENT_TITLES_IN_PROMPT:]
+        recent_rule = (
+            "- 末尾の「配信済みのニュース」と同じ出来事を扱う見出しは選ばない。"
+            "続報でも、新しい決定・発表・数字などの進展が見出しや概要から読み取れるものだけ選んでよい\n"
+        )
+        recent_section = "\n\n--- 直近に配信済みのニュース(同じ出来事は選ばない) ---\n" + "\n".join(f"- {t}" for t in shown)
+
     return f"""以下は、本日時点のニュース見出しを、テーマごとに分けた一覧です。
 各見出しの先頭の[ ]内の数字がIDです。
 
@@ -302,7 +406,7 @@ def build_selection_prompt(headlines):
 - 必ず、そのテーマの一覧の中から選ぶ(別のテーマの見出しは選ばない)
 - 一覧に見出しがないテーマは、出力に含めない
 - 同じ出来事を、複数のテーマで重複して選ばない
-- 英語の見出しも、日本語にする
+{recent_rule}- 英語の見出しも、日本語にする
 
 出力は、説明文やMarkdownを一切含めず、次の形式の**JSON配列のみ**にしてください。
 
@@ -316,7 +420,7 @@ def build_selection_prompt(headlines):
 ]
 
 --- ニュース見出し一覧 ---
-{chr(10).join(sections)}
+{chr(10).join(sections)}{recent_section}
 """
 
 
@@ -333,6 +437,7 @@ def make_item(topic, headline, pick=None):
         summary=headline.summary,
         link=headline.link,
         body=headline.body,
+        avoid_repeats=topic.avoid_repeats,
     )
 
 
@@ -371,8 +476,8 @@ def resolve_selection(picks, headlines):
     return items
 
 
-def select_news(gemini, headlines):
-    picks = parse_json_response(gemini.generate(build_selection_prompt(headlines), json_mode=True))
+def select_news(gemini, headlines, recent_titles=()):
+    picks = parse_json_response(gemini.generate(build_selection_prompt(headlines, recent_titles), json_mode=True))
     if not isinstance(picks, list):
         raise RuntimeError(f"Geminiの出力が想定したJSON配列ではありません: {str(picks)[:200]}")
     items = resolve_selection(picks, headlines)
@@ -625,11 +730,14 @@ def cmd_build():
     date_label = japanese_date_label(now)
     gemini = GeminiClient.from_env()
 
+    history = load_history(date_iso)
+    recent = recent_entries(history, date_iso)
+
     print("ニュース収集中...")
-    headlines = collect_headlines()
+    headlines = collect_headlines(sent_links={entry["link"] for entry in recent})
 
     print("Geminiでテーマごとに選定中...")
-    items = select_news(gemini, headlines)
+    items = select_news(gemini, headlines, recent_titles=[entry["title"] for entry in recent])
 
     base = page_base_url()
     day_dir = DOCS_DIR / date_iso
@@ -647,6 +755,7 @@ def cmd_build():
 
     (day_dir / "index.html").write_text(render_day_index(items, date_label), encoding="utf-8")
     write_root_index()
+    save_history(history, date_iso, items)
 
     OUT_DIR.mkdir(exist_ok=True)
     cards = [item.to_card() for item in items]
