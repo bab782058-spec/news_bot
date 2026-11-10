@@ -1,30 +1,4 @@
 {
-  "2026-11-03": [
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
-      "title": "子どもSNS利用規制 年末めど方針とりまとめへ"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199091000.html",
-      "title": "昨年度の食料自給率37％ 過去最低更新"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6601048?source=rss",
-      "title": "住宅ローン「フラット35」金利3.81%に上昇"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/news/article/2611/01/2000002776/",
-      "title": "AI学習拒否をrobots.txtで一括指定へ"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-01/stock-market-today-dow-s-p-live-updates",
-      "title": "米S&P500が下落 半導体株安が響く"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/02/in-one-of-the-largest-deals-in-tech-history-marvell-buys-lumentum-for-115b/",
-      "title": "米マーベルがルメンタムを1150億ドルで買収"
-    }
-  ],
   "2026-11-04": [
     {
       "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
@@ -205,6 +179,32 @@
     {
       "link": "https://www.bbc.co.uk/news/articles/c6zxjx01vyleo?at_medium=RSS&at_campaign=rss",
       "title": "米エヌビディア株が下落 CEO問題で"
+    }
+  ],
+  "2026-11-11": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602067?source=rss",
+      "title": "政府、原子力潜水艦の導入視野に検討へ"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602072?source=rss",
+      "title": "ソフトバンクG、中間期7680億円の赤字"
+    },
+    {
+      "link": "https://www.fsa.go.jp/news/r8/hoken/20261109/20261109.html",
+      "title": "金融庁、ソルベンシー規制改正案を公表"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/news/article/2611/10/2000003072/",
+      "title": "シェアフル不正アクセス、最大750万件漏洩か"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-10/treasuries-slide-as-hot-us-inflation-cements-december-rate-bets",
+      "title": "米債券利回りが急上昇、インフレ加速受け"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+      "title": "アンスロピック、上場時評価1.4兆ドルへ"
     }
   ]
 }
