@@ -1,56 +1,4 @@
 {
-  "2026-11-04": [
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
-      "title": "高市首相、子どものSNS規制で年末方針指示"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199091000.html",
-      "title": "昨年度の食料自給率37％、過去最低を記録"
-    },
-    {
-      "link": "https://www.fsa.go.jp/ordinary/tariff202504/kashitsuke/202506.html",
-      "title": "金融庁、金融機関の貸付条件変更の状況公表"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/business/articles/2611/04/news010.html",
-      "title": "クレディセゾン、全社導入でトークン枯渇"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-02/stock-market-today-dow-s-p-live-updates",
-      "title": "米大統領選投票日、ハイテク株が上昇"
-    },
-    {
-      "link": "https://www.bbc.co.uk/news/articles/cm9qzdqpxy48o?at_medium=RSS&at_campaign=rss",
-      "title": "グーグル、AI検索の影響で株価が急落"
-    }
-  ],
-  "2026-11-05": [
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
-      "title": "子どもSNS利用規制へ 年末めどに方針決定"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199091000.html",
-      "title": "昨年度の食料自給率37％ 過去最低を記録"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199701000.html",
-      "title": "米雇用減少で利上げ観測後退 円高ドル安進む"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/news/article/2611/04/2000002885/",
-      "title": "無印良品アプリに不正アクセス 109万件流出か"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-04/us-equity-futures-inch-higher-as-investors-await-midterm-results",
-      "title": "米株式市場が急伸 中間選挙の民主大勝受け"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
-      "title": "MetaがAIコーディングのConductorを買収"
-    }
-  ],
   "2026-11-06": [
     {
       "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
@@ -205,6 +153,32 @@
     {
       "link": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
       "title": "アンスロピック、上場時評価1.4兆ドルへ"
+    }
+  ],
+  "2026-11-13": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602311?source=rss",
+      "title": "消費税減税の広報動画は公開見送りに"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602338?source=rss",
+      "title": "与党が新築転売対策として空室税を検討"
+    },
+    {
+      "link": "https://www.fsa.go.jp/common/conference/minister/2026b/20261110-1.html",
+      "title": "片山財務相の閣議後記者会見概要が公開"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/news/article/2611/12/2000003158/",
+      "title": "宝くじ公式サイトで当落情報など閲覧の恐れ"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-12/us-records-404-billion-deficit-in-first-month-of-fiscal-year",
+      "title": "10月の米財政赤字が4040億ドルへ拡大"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+      "title": "米ユナイテッド航空がAIの航空券予約を禁止"
     }
   ]
 }
