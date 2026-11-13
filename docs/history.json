@@ -1,30 +1,4 @@
 {
-  "2026-11-06": [
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
-      "title": "子どものSNS利用規制に向け年末までに方針決定へ"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199091000.html",
-      "title": "昨年度の食料自給率は37％で過去最低を記録"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199721000.html",
-      "title": "米雇用統計発表で円高進む 一時156円台後半に"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/news/article/2611/06/2000002929/",
-      "title": "ドコモに不正アクセス 最大30万件の顧客情報流出か"
-    },
-    {
-      "link": "https://www.bbc.co.uk/news/articles/ck5ynw45jrgqo?at_medium=RSS&at_campaign=rss",
-      "title": "英中銀が政策金利を4％に引き上げ 3年超ぶりの利上げ"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
-      "title": "Airbnbが2027年前半にAI旅行サポートを開始"
-    }
-  ],
   "2026-11-07": [
     {
       "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
@@ -179,6 +153,32 @@
     {
       "link": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
       "title": "米ユナイテッド航空がAIの航空券予約を禁止"
+    }
+  ],
+  "2026-11-14": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602480?source=rss",
+      "title": "自衛官の給与引き上げ法が成立"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602467?source=rss",
+      "title": "ワタミが約320億円規模のMBOを実施へ"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602452?source=rss",
+      "title": "個人向け国債のNISA対象化は見送りの方向"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/news/article/2611/13/2000003197/",
+      "title": "GMO「お名前.com」不正アクセスの補償費30億円超"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-13/dollar-poised-for-best-week-in-over-a-month-on-fed-hike-bets",
+      "title": "FRB利上げ観測でドル相場が1か月ぶりの高値"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
+      "title": "ChatGPTにAI決済機能「ウォレット」が導入"
     }
   ]
 }
