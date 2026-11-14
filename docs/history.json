@@ -1,30 +1,4 @@
 {
-  "2026-11-07": [
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
-      "title": "子どもSNS利用規制の法案提出へ方針要請"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199091000.html",
-      "title": "昨年度の食料自給率が37％で過去最低に"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199701000.html",
-      "title": "米雇用統計の減少を受け円高ドル安が進む"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/news/article/2611/06/2000002984/",
-      "title": "ロート製薬で280万人分の個人情報が漏えい"
-    },
-    {
-      "link": "https://www.bbc.co.uk/news/articles/ck5ynw45jrgqo?at_medium=RSS&at_campaign=rss",
-      "title": "英中銀が政策金利を4％へ引き上げ"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/06/fox-completes-its-22b-acquisition-of-roku/",
-      "title": "米フォックスが動画配信大手ロクの買収を完了"
-    }
-  ],
   "2026-11-08": [
     {
       "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
@@ -179,6 +153,32 @@
     {
       "link": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
       "title": "ChatGPTにAI決済機能「ウォレット」が導入"
+    }
+  ],
+  "2026-11-15": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602504?source=rss",
+      "title": "防衛費を5年で60兆円規模へ、政府が調整"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602566?source=rss",
+      "title": "菓子店の倒産が過去最多へ、原材料高や老舗低迷で"
+    },
+    {
+      "link": "https://www.fsa.go.jp/inter/bis/20261112/20261112.html",
+      "title": "バーゼル委が銀行監督の新指針公表、金融庁が発表"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/mobile/articles/2611/13/news096.html",
+      "title": "マネックス証券で不正アクセス、最大113万件流出か"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-14/goldman-sachs-sees-19-return-on-asia-ex-japan-stocks-in-2027",
+      "title": "アジア株は来年19％上昇へ、ゴールドマン予測"
+    },
+    {
+      "link": "https://www.bbc.co.uk/news/articles/cwn83gxemk35o?at_medium=RSS&at_campaign=rss",
+      "title": "伊当局がメタに制裁金8億ユーロ、写真巡り"
     }
   ]
 }
