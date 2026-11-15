@@ -1,30 +1,4 @@
 {
-  "2026-11-08": [
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
-      "title": "子どものSNS利用規制、年末めどに方針策定へ 高市首相指示"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199091000.html",
-      "title": "昨年度の食料自給率が37％に低下、過去最低を記録"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199721000.html",
-      "title": "米雇用統計を受け円高進行、一時1ドル＝156円台に"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6601482?source=rss",
-      "title": "ドコモが通信障害から復旧、原因を公表"
-    },
-    {
-      "link": "https://www.bbc.co.uk/news/articles/ck5ynw45jrgqo?at_medium=RSS&at_campaign=rss",
-      "title": "政策金利を4％に引き上げ、3年超ぶりの利上げを実施"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
-      "title": "オープンAIが110億ドルを追加調達、企業価値1兆ドル超に"
-    }
-  ],
   "2026-11-09": [
     {
       "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
@@ -179,6 +153,32 @@
     {
       "link": "https://www.bbc.co.uk/news/articles/cwn83gxemk35o?at_medium=RSS&at_campaign=rss",
       "title": "伊当局がメタに制裁金8億ユーロ、写真巡り"
+    }
+  ],
+  "2026-11-16": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602714?source=rss",
+      "title": "生活保護費の改定議論、物価高の反映が焦点に"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602678?source=rss",
+      "title": "タマホーム、架空請求による売上計上の疑い浮上"
+    },
+    {
+      "link": "https://www.fsa.go.jp/ordinary/chuui/chuui_phishing.html",
+      "title": "金融庁、ネット取引サービスの不正アクセス注意を更新"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/mobile/articles/2611/15/news007.html",
+      "title": "ドコモで不正アクセス、最大29.5万件流出か"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-15/roughed-up-bond-traders-look-to-fedspeak-minutes-for-next-move",
+      "title": "米国債市場、FRB高官発言や議事録を注視"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+      "title": "中国の先端AI、米規制対象のNVIDIA半導体で開発か"
     }
   ]
 }
