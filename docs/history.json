@@ -1,30 +1,4 @@
 {
-  "2026-11-09": [
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199571000.html",
-      "title": "子どものSNS利用規制、法案提出へ年末に方針策定"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199091000.html",
-      "title": "食料自給率が37％で過去最低、コメ価格高騰が影響"
-    },
-    {
-      "link": "http://www3.nhk.or.jp/news/html/20260807/k10015199721000.html",
-      "title": "米雇用統計を受けNY円相場が急伸、一時156円台"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/aiplus/article/2611/06/2000002937/",
-      "title": "ピザーラ、無許諾のAI生成コラボCMを巡り謝罪"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-08/treasury-rally-gets-new-boost-as-election-hammers-the-ai-trade",
-      "title": "米国債が急反発、中間選挙後のAI株下落が支援"
-    },
-    {
-      "link": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss",
-      "title": "テスラ、サイバートラック終了か 自動運転タクシーへ"
-    }
-  ],
   "2026-11-10": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6601979?source=rss",
@@ -179,6 +153,32 @@
     {
       "link": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
       "title": "中国の先端AI、米規制対象のNVIDIA半導体で開発か"
+    }
+  ],
+  "2026-11-17": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602766?source=rss",
+      "title": "日韓首脳が17日にフィリピンで会談へ"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602817?source=rss",
+      "title": "マンションの短期売買に対する課税強化を検討"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602802?source=rss",
+      "title": "日経平均株価が反落 AI関連銘柄の下落が主導"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/business/articles/2611/17/news039.html",
+      "title": "NTTが宇宙に光通信網を構築する構想を発表"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-16/goldman-forecasts-gold-to-take-two-years-to-recapture-all-time-highs",
+      "title": "金価格の最高値更新には今後2年かかる見通し"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents/",
+      "title": "カリフォルニア州司法長官がOpenAIを提訴"
     }
   ]
 }
