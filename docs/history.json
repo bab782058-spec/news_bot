@@ -1,30 +1,4 @@
 {
-  "2026-11-10": [
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6601979?source=rss",
-      "title": "自衛官定員削減を安保3文書に明記へ"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6601897?source=rss",
-      "title": "三井化学がJSRを1.8兆円で買収へ"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6601981?source=rss",
-      "title": "個人向け国債の発行額が8兆円を突破"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/business/articles/2611/09/news085.html",
-      "title": "ニトリで最大3762万件の情報流出か"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-09/oil-falls-on-unconfirmed-report-that-iran-eased-hormuz-demands",
-      "title": "中東和平への期待で原油相場が下落"
-    },
-    {
-      "link": "https://www.bbc.co.uk/news/articles/c6zxjx01vyleo?at_medium=RSS&at_campaign=rss",
-      "title": "米エヌビディア株が下落 CEO問題で"
-    }
-  ],
   "2026-11-11": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6602067?source=rss",
@@ -179,6 +153,32 @@
     {
       "link": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents/",
       "title": "カリフォルニア州司法長官がOpenAIを提訴"
+    }
+  ],
+  "2026-11-18": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602882?source=rss",
+      "title": "福岡沖ノ島沖で推定ロシア機が領空侵犯"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6602859?source=rss",
+      "title": "関西での出店攻勢を強めるオーケーの戦略"
+    },
+    {
+      "link": "https://www.fsa.go.jp/policy/nisa2/products/index.html",
+      "title": "金融庁、つみたて投資枠対象商品の概要を更新"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/news/article/2611/17/2000003275/",
+      "title": "楽天証券に不正アクセス、最大1125万口座が漏えいか"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-17/nasdaq-100-futures-rise-as-investors-prepare-for-nvidia-results",
+      "title": "米株価が4日続落、エヌビディアの決算に注目集まる"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/",
+      "title": "米DMVの命令受けWaymoが高速道路での自動運転を中断"
     }
   ]
 }
