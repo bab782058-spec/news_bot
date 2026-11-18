@@ -1,30 +1,4 @@
 {
-  "2026-11-11": [
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602067?source=rss",
-      "title": "政府、原子力潜水艦の導入視野に検討へ"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602072?source=rss",
-      "title": "ソフトバンクG、中間期7680億円の赤字"
-    },
-    {
-      "link": "https://www.fsa.go.jp/news/r8/hoken/20261109/20261109.html",
-      "title": "金融庁、ソルベンシー規制改正案を公表"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/news/article/2611/10/2000003072/",
-      "title": "シェアフル不正アクセス、最大750万件漏洩か"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-10/treasuries-slide-as-hot-us-inflation-cements-december-rate-bets",
-      "title": "米債券利回りが急上昇、インフレ加速受け"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
-      "title": "アンスロピック、上場時評価1.4兆ドルへ"
-    }
-  ],
   "2026-11-13": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6602311?source=rss",
@@ -179,6 +153,32 @@
     {
       "link": "https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/",
       "title": "米DMVの命令受けWaymoが高速道路での自動運転を中断"
+    }
+  ],
+  "2026-11-19": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603096?source=rss",
+      "title": "首相がロシアのプーチン大統領と30分間対話"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603047?source=rss",
+      "title": "日本の自動車各社が主要部品を一部共通化へ"
+    },
+    {
+      "link": "https://www.fsa.go.jp/news/r8/sonota/20261113/japanfintechweek.html",
+      "title": "金融庁がJapan Fintech Week 2027開催を発表"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/mobile/articles/2611/18/news085.html",
+      "title": "KDDIが通話とSMS特化のINFOBAR ZERO発表"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-17/gold-steadies-near-14-month-low-as-rate-hike-pressure-mounts",
+      "title": "金価格が3％超急落しタカ派なFRB発言で1年ぶり安値"
+    },
+    {
+      "link": "https://www.bbc.co.uk/news/articles/cke89jevqm1vo?at_medium=RSS&at_campaign=rss",
+      "title": "プログラミング言語Javaに深刻な脆弱性を検出"
     }
   ]
 }
