@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>デジタル庁の政府共通システムでファイル漏えいの可能性</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--card:#f1f4f8;--accent:#2d3e50;--link:#3d5f94}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--fg:#e8eaed;--sub:#9aa3ad;--card:#1f262e;--accent:#2d3e50;--link:#8fb0e0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
+header{background:var(--accent);color:#fff;padding:14px 20px;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:1.35rem;line-height:1.5;margin:0 0 8px}
+h2{font-size:1.1rem;line-height:1.5;margin:1.8em 0 .6em;padding-left:.6em;border-left:4px solid var(--link)}
+.meta{color:var(--sub);font-size:.85rem;margin-bottom:20px}
+.tag{display:inline-block;color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:0 .8em;margin-right:.6em;line-height:1.7}
+.lead{background:var(--card);border-radius:10px;padding:14px 16px;margin:0 0 24px;font-weight:600}
+p{margin:0 0 1.1em;font-size:1.02rem}
+.note{color:var(--sub);font-size:.85rem;border:1px dashed var(--sub);border-radius:8px;padding:8px 12px;margin:0 0 20px}
+.src{margin-top:32px;padding-top:16px;border-top:1px solid var(--card);font-size:.85rem;color:var(--sub)}
+.src p{font-size:.85rem;margin:0 0 .6em}
+a{color:var(--link)}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{padding:14px 0;border-bottom:1px solid var(--card)}
+ul.list .t{font-weight:700}
+ul.list .o{color:var(--sub);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>🌍 Today&#x27;s 7 Topics</header>
+<main>
+<h1>デジタル庁の政府共通システムでファイル漏えいの可能性</h1>
+<div class="meta"><span class="tag" style="background:#8E6C88">日本IT</span>ITmedia ・ 2026年11月21日(土)</div>
+<div class="lead">デジタル庁は、政府の業務環境「GSS」のファイル共有サービスにおいて、第三者による不正アクセスで情報が漏えいした可能性を発表した。</div>
+
+<h2>デジタル庁が運用する「GSS」ファイル共有サービスにおける情報漏えい懸念の公表</h2>
+<p>デジタル庁は11月20日、同庁が管理および運用を行っている政府共通の業務環境「ガバメントソリューションサービス」（通称GSS）内で提供されているファイル共有サービスにおいて、取り扱われていたファイルの一部が外部へ漏えいした可能性があることを公表した。</p>
+<p>このファイル共有サービスは、GSSを利用する政府機関や関連組織向けに構築・提供されているシステムである。主な利用用途としては、行政機関の利用者同士が業務上のやり取りを行う場合だけでなく、事業者をはじめとする組織外部の関係者との間において、各種の会議資料といったファイルを円滑に共有・閲覧するために幅広く活用されている。</p>
+<p>今回、この運用環境において、本来アクセスを許可されている正規の共有相手先とは異なる第三者によるアクセスが発生していたことが判明し、システム内に保存されていた情報が外部に漏洩したリスクが浮上する事態となった。</p>
+<h2>不正アクセスの検知からサービス停止までの経緯と発生期間</h2>
+<p>本件の発覚の経緯として、デジタル庁は11月12日の時点で、ファイル共有サービスにおいて正当な権限を持たない第三者がファイルにアクセスした可能性を検知した。検知を受けた同庁は、さらなるアクセスや漏洩被害の拡大を防ぐ安全措置として、検知と同日である11月12日のうちに当該ファイル共有サービスの運用を即時に停止する措置を講じた。</p>
+<p>その後の調査および解析作業により、正規以外のアクセスが行われていた期間が判明している。確認されたアクセス発生期間は、7月30日から11月12日までの期間に及んでいたことが明らかにされた。これにより、約3か月半という長期間にわたり、第三者がファイル共有サービスへアクセスできる状態が生じていたことが確認されている。</p>
+<h2>漏えいした対象ファイルの内容と個人情報保護委員会への対応状況</h2>
+<p>今回漏えいした可能性があるとされるファイルに関しては、その中に個人情報が含まれていた可能性も想定されている。このような状況を踏まえ、デジタル庁は個人情報保護委員会に対して本件に関する事態の報告を行った。</p>
+<p>なお、デジタル庁が公表した時点において、今回のアクセス事案に起因する個人情報の悪用や二次被害といった具体的な被害事例は確認されていないと説明されている。同庁は二次被害の有無や対象となったデータの範囲について、引き続き確認作業を進めている。</p>
+<h2>警察や外部専門事業者との連携による調査体制と今後の見通し</h2>
+<p>デジタル庁は、第三者によるアクセスのあった期間のさらなる詳細な解明や、どのような経路・手法でアクセスが行われたのかといった原因の究明に向け、包括的な調査を行っている。</p>
+<p>調査の推進にあたっては、デジタル庁の内部調査にとどまらず、警察などの関係機関と密接な連携を図っている。さらに、高度なセキュリティ技術や知見を有する外部の専門事業者の協力も得ながら、ログの解析をはじめとする詳細な調査作業を進めている。アクセス期間の詳細な確定や、実際に影響を受けたファイルの特定、安全性の検証など、今後の調査を通じて事態の全容解明を目指す見通しである。</p>
+<h2>9月に発表されたGSSにおける過去の大規模漏えい事案との経緯</h2>
+<p>政府共通の業務環境であるGSSをめぐっては、今回の事案以前にも外部からのアクセスに起因するセキュリティ問題が発生していた経緯がある。</p>
+<p>デジタル庁は同年9月にも、GSSに対する外部からの不正アクセスが発生したことを発表していた。この9月の発表においては、政府の各府省庁などに所属する職員や、政府業務に携わった関係者の個人情報、約24万6000件が外部へ漏えいした可能性があることが明らかにされていた。</p>
+<p>9月に発表された大規模な情報漏えい懸念の事案に続き、今回11月にも同様にGSSのファイル共有サービスを対象とした新たなアクセスの可能性および情報漏えいの懸念が浮上した形となり、GSSの運用・管理における安全性の検証や原因究明が引き続き進められている。</p>
+<div class="src">
+<p>原文: <a href="https://www.itmedia.co.jp/news/article/2611/20/2000003381/" rel="noopener noreferrer" target="_blank">ITmedia</a>(外部サイト・原文の言語で表示されます)</p>
+<p>この解説はGeminiが原文をもとに日本語で要約・再構成したものです。正確な内容は原文でご確認ください。</p>
+<p><a href="index.html">← 今日のニュースに戻る</a></p>
+</div>
+</main>
+</body>
+</html>

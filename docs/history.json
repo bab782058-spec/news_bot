@@ -1,30 +1,4 @@
 {
-  "2026-11-13": [
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602311?source=rss",
-      "title": "消費税減税の広報動画は公開見送りに"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602338?source=rss",
-      "title": "与党が新築転売対策として空室税を検討"
-    },
-    {
-      "link": "https://www.fsa.go.jp/common/conference/minister/2026b/20261110-1.html",
-      "title": "片山財務相の閣議後記者会見概要が公開"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/news/article/2611/12/2000003158/",
-      "title": "宝くじ公式サイトで当落情報など閲覧の恐れ"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-12/us-records-404-billion-deficit-in-first-month-of-fiscal-year",
-      "title": "10月の米財政赤字が4040億ドルへ拡大"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
-      "title": "米ユナイテッド航空がAIの航空券予約を禁止"
-    }
-  ],
   "2026-11-14": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6602480?source=rss",
@@ -205,6 +179,32 @@
     {
       "link": "https://techcrunch.com/2026/11/19/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
       "title": "エヌビディアのフアンＣＥＯが辞任、波紋広がる"
+    }
+  ],
+  "2026-11-21": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603335?source=rss",
+      "title": "安保3文書素案に原子力潜水艦保有の検討着手を明記"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603336?source=rss",
+      "title": "日本でのサウジ原油備蓄量を3倍に拡大することで合意"
+    },
+    {
+      "link": "https://www.fsa.go.jp/news/r8/ginkou/20261118.html",
+      "title": "金融庁が銀行法施行規則や自己資本比率規制の改正案を公表"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/news/article/2611/20/2000003381/",
+      "title": "デジタル庁の政府共通システムでファイル漏えいの可能性"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-20/crowdstrike-is-in-talks-to-buy-cybersecurity-firm-zscaler",
+      "title": "米クラウドストライクが同業ゼットスケーラー買収へ協議"
+    },
+    {
+      "link": "https://www.bbc.co.uk/news/articles/cmde1lw9y54ko?at_medium=RSS&at_campaign=rss",
+      "title": "トランプ氏が米企業の海外AIデータセンター建設禁止を示唆"
     }
   ]
 }
