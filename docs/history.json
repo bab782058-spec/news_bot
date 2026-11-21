@@ -1,30 +1,4 @@
 {
-  "2026-11-14": [
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602480?source=rss",
-      "title": "自衛官の給与引き上げ法が成立"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602467?source=rss",
-      "title": "ワタミが約320億円規模のMBOを実施へ"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602452?source=rss",
-      "title": "個人向け国債のNISA対象化は見送りの方向"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/news/article/2611/13/2000003197/",
-      "title": "GMO「お名前.com」不正アクセスの補償費30億円超"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-13/dollar-poised-for-best-week-in-over-a-month-on-fed-hike-bets",
-      "title": "FRB利上げ観測でドル相場が1か月ぶりの高値"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
-      "title": "ChatGPTにAI決済機能「ウォレット」が導入"
-    }
-  ],
   "2026-11-15": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6602504?source=rss",
@@ -205,6 +179,32 @@
     {
       "link": "https://www.bbc.co.uk/news/articles/cmde1lw9y54ko?at_medium=RSS&at_campaign=rss",
       "title": "トランプ氏が米企業の海外AIデータセンター建設禁止を示唆"
+    }
+  ],
+  "2026-11-22": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603469?source=rss",
+      "title": "公明党、統一選で自民推薦見送りの方針固める"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603347?source=rss",
+      "title": "今年度のEV補助金が受付終了、予算上限に達する"
+    },
+    {
+      "link": "https://www.fsa.go.jp/news/r8/ginkou/20261119-2/20261119-2.html",
+      "title": "金融庁、事業者支援の促進と金融円滑化方針を公表"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603349?source=rss",
+      "title": "ZOZOTOWNで顧客情報約1518万件が漏洩"
+    },
+    {
+      "link": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss",
+      "title": "米ハイテク株が急落、ナスダックなど大幅安"
+    },
+    {
+      "link": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss",
+      "title": "「GTA6」初日売上38億ドル、エンタメ史上最高"
     }
   ]
 }
