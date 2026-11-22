@@ -1,30 +1,4 @@
 {
-  "2026-11-15": [
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602504?source=rss",
-      "title": "防衛費を5年で60兆円規模へ、政府が調整"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602566?source=rss",
-      "title": "菓子店の倒産が過去最多へ、原材料高や老舗低迷で"
-    },
-    {
-      "link": "https://www.fsa.go.jp/inter/bis/20261112/20261112.html",
-      "title": "バーゼル委が銀行監督の新指針公表、金融庁が発表"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/mobile/articles/2611/13/news096.html",
-      "title": "マネックス証券で不正アクセス、最大113万件流出か"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-14/goldman-sachs-sees-19-return-on-asia-ex-japan-stocks-in-2027",
-      "title": "アジア株は来年19％上昇へ、ゴールドマン予測"
-    },
-    {
-      "link": "https://www.bbc.co.uk/news/articles/cwn83gxemk35o?at_medium=RSS&at_campaign=rss",
-      "title": "伊当局がメタに制裁金8億ユーロ、写真巡り"
-    }
-  ],
   "2026-11-16": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6602714?source=rss",
@@ -205,6 +179,32 @@
     {
       "link": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss",
       "title": "「GTA6」初日売上38億ドル、エンタメ史上最高"
+    }
+  ],
+  "2026-11-23": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603582?source=rss",
+      "title": "米軍普天間飛行場の負担軽減会議が開催へ"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603504?source=rss",
+      "title": "就職氷河期世代の正社員率は改善も格差残る"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603509?source=rss",
+      "title": "地方銀行の再編を巡り各地でくすぶる火種"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603588?source=rss",
+      "title": "タワーレコードで約１１００万件の情報流出"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-22/s-korea-rolls-out-phased-measures-to-stabilize-volatile-markets",
+      "title": "韓国金融当局が株式市場安定化へ段階的措置"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+      "title": "ＡＩと数学者が「リーマン予想」の解決を主張"
     }
   ]
 }
