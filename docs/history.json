@@ -1,30 +1,4 @@
 {
-  "2026-11-16": [
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602714?source=rss",
-      "title": "生活保護費の改定議論、物価高の反映が焦点に"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602678?source=rss",
-      "title": "タマホーム、架空請求による売上計上の疑い浮上"
-    },
-    {
-      "link": "https://www.fsa.go.jp/ordinary/chuui/chuui_phishing.html",
-      "title": "金融庁、ネット取引サービスの不正アクセス注意を更新"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/mobile/articles/2611/15/news007.html",
-      "title": "ドコモで不正アクセス、最大29.5万件流出か"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-15/roughed-up-bond-traders-look-to-fedspeak-minutes-for-next-move",
-      "title": "米国債市場、FRB高官発言や議事録を注視"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
-      "title": "中国の先端AI、米規制対象のNVIDIA半導体で開発か"
-    }
-  ],
   "2026-11-17": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6602766?source=rss",
@@ -205,6 +179,32 @@
     {
       "link": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
       "title": "ＡＩと数学者が「リーマン予想」の解決を主張"
+    }
+  ],
+  "2026-11-24": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603632?source=rss",
+      "title": "自民党、首相の国会出席削減を議論"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603667?source=rss",
+      "title": "リフォーム工事業の倒産が過去最多に"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603732?source=rss",
+      "title": "フアン氏 エヌビディアCEOに復帰"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/mobile/articles/2611/24/news034.html",
+      "title": "ドコモ・バイクシェア、新ブランド始動"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-22/stock-traders-brace-for-more-volatility-after-tech-driven-rout",
+      "title": "フアン氏復帰受け、米国株が大幅反発"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/",
+      "title": "アマゾン、デカートのAI技術を買収"
     }
   ]
 }
