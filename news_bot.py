@@ -431,7 +431,8 @@ def make_item(topic, headline, pick=None):
         label=topic.label,
         color=topic.color,
         title=str(pick.get("title", "")).strip() or headline.title,
-        overview=str(pick.get("overview", "")).strip() or headline.summary[:100],
+        # 金融庁のRSSのように概要が空のこともあるので、最後は見出しで補う(LINEは空の文字列を受け付けない)
+        overview=str(pick.get("overview", "")).strip() or headline.summary[:100] or headline.title,
         source=headline.source,
         orig_title=headline.title,
         summary=headline.summary,
@@ -664,9 +665,11 @@ def build_item_row(card):
         ],
         layout="horizontal", alignItems="center",
     )
-    overview = flex_text(card["overview"], size=OVERVIEW_SIZE, color="#555555", wrap=True, margin="xs")
+    row_contents = [title_row]
+    if card["overview"].strip():  # LINEは空の文字列を受け付けないので、あらすじがなければ行ごと省く
+        row_contents.append(flex_text(card["overview"], size=OVERVIEW_SIZE, color="#555555", wrap=True, margin="xs"))
     return flex_box(
-        [title_row, overview],
+        row_contents,
         margin=ITEM_GAP,
         action={"type": "uri", "label": "詳細", "uri": card["page_url"]},  # カードのどこをタップしても詳細ページが開く
     )
@@ -763,10 +766,22 @@ def cmd_build():
     print(f"完了: {len(items)}件のページを docs/{date_iso}/ に生成しました")
 
 
+def format_cards_as_text(cards):
+    """Flexメッセージが送れなかったときの、プレーンテキスト版"""
+    entries = [f"【{card['label']}】{card['title']}\n{card['overview']}\n{card['page_url']}" for card in cards]
+    return f"🌍 {CARD_TITLE}\n\n" + "\n\n".join(entries)
+
+
 def cmd_send():
     cards = json.loads(NEWS_JSON.read_text(encoding="utf-8"))
+    line = LineClient(os.environ["LINE_CHANNEL_ACCESS_TOKEN"])
     print("LINEにFlexメッセージを送信中...")
-    LineClient(os.environ["LINE_CHANNEL_ACCESS_TOKEN"]).send_flex(build_flex_message(cards), alt_text=CARD_TITLE)
+    try:
+        line.send_flex(build_flex_message(cards), alt_text=CARD_TITLE)
+    except RuntimeError as error:
+        # 見た目の都合で配信そのものが止まらないよう、テキストで送り直す
+        print(f"[WARN] Flexメッセージの送信に失敗、テキストで送り直します: {error}", file=sys.stderr)
+        line.send_text(format_cards_as_text(cards))
     print("完了しました。")
 
 
