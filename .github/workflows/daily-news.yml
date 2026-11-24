@@ -14,13 +14,18 @@ concurrency:
   group: daily-news
   cancel-in-progress: false
 
+# 4つのジョブに分けている:
+#   build        ニュースを集めて、詳細ページ(docs/)とLINE用のカードデータを作る
+#   deploy       詳細ページをGitHub Pagesに公開する(LINEより先に公開して、リンク切れを防ぐ)
+#   send         公開が終わってからLINEに送る
+#   notify-error どれかが失敗したら、LINEにエラーを知らせる
+# 公開(deploy)を別ジョブにしているのは、「アップロードした直後に公開用データが見つからない」という
+# GitHub側の一時的な不具合(actions/deploy-pages の Issue #451)を避けるため。
+# 公開だけが失敗したときは、「Re-run failed jobs」で、ニュースの収集をやり直さずに再実行できる。
 jobs:
-  send-news:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 45   # Geminiが長時間止まっているときに、実行時間を食いつぶさないため
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     env:
       PYTHONUNBUFFERED: "1"   # ログの順序が入れ替わらないように
     steps:
@@ -55,15 +60,52 @@ jobs:
             git push
           fi
 
-      # 3) ページを公開する(LINEより先に公開して、リンク切れを防ぐ)
+      # 3) 公開するページと、LINEに送るカードデータを、次のジョブへ渡す
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
+      - name: Upload LINE card data
+        uses: actions/upload-artifact@v4
+        with:
+          name: news-cards
+          path: out/news.json
+          overwrite: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  send:
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install feedparser requests   # news_bot.py が import するため(本文取得用のtrafilaturaは不要)
+
+      - name: Download LINE card data
+        uses: actions/download-artifact@v4
+        with:
+          name: news-cards
+          path: out
 
       # 4) 公開が終わってからLINEに送る
       - name: Send to LINE
@@ -71,8 +113,24 @@ jobs:
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
         run: python news_bot.py send
 
+  notify-error:
+    needs: [build, deploy, send]
+    if: ${{ failure() }}   # 上のどれかが失敗したときだけ動く
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install feedparser requests
+
       - name: Notify error to LINE
-        if: failure()
         env:
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
         run: python news_bot.py error
