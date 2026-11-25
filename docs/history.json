@@ -1,30 +1,4 @@
 {
-  "2026-11-18": [
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602882?source=rss",
-      "title": "福岡沖ノ島沖で推定ロシア機が領空侵犯"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6602859?source=rss",
-      "title": "関西での出店攻勢を強めるオーケーの戦略"
-    },
-    {
-      "link": "https://www.fsa.go.jp/policy/nisa2/products/index.html",
-      "title": "金融庁、つみたて投資枠対象商品の概要を更新"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/news/article/2611/17/2000003275/",
-      "title": "楽天証券に不正アクセス、最大1125万口座が漏えいか"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-17/nasdaq-100-futures-rise-as-investors-prepare-for-nvidia-results",
-      "title": "米株価が4日続落、エヌビディアの決算に注目集まる"
-    },
-    {
-      "link": "https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/",
-      "title": "米DMVの命令受けWaymoが高速道路での自動運転を中断"
-    }
-  ],
   "2026-11-19": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6603096?source=rss",
@@ -205,6 +179,32 @@
     {
       "link": "https://www.bbc.co.uk/news/articles/cmy49ngydqzpo?at_medium=RSS&at_campaign=rss",
       "title": "米陪審、ファーウェイの企業秘密窃取を有罪認定"
+    }
+  ],
+  "2026-11-26": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603939?source=rss",
+      "title": "介護保険料、一部の高齢者で負担増を検討"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603962?source=rss",
+      "title": "ＡＮＡ、操縦士不足解消へ養成会社を設立"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6603940?source=rss",
+      "title": "プルデンシャル、新規保険契約が９割超減"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/news/article/2611/25/2000003458/",
+      "title": "漏洩情報遮断へブロッキング法制化の議論"
+    },
+    {
+      "link": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss",
+      "title": "米政府、中国やＥＵなど対象の新関税発表"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/",
+      "title": "米当局、宇宙ＡＩデータセンター計画承認"
     }
   ]
 }
