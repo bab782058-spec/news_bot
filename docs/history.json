@@ -1,30 +1,4 @@
 {
-  "2026-11-19": [
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6603096?source=rss",
-      "title": "首相がロシアのプーチン大統領と30分間対話"
-    },
-    {
-      "link": "https://news.yahoo.co.jp/pickup/6603047?source=rss",
-      "title": "日本の自動車各社が主要部品を一部共通化へ"
-    },
-    {
-      "link": "https://www.fsa.go.jp/news/r8/sonota/20261113/japanfintechweek.html",
-      "title": "金融庁がJapan Fintech Week 2027開催を発表"
-    },
-    {
-      "link": "https://www.itmedia.co.jp/mobile/articles/2611/18/news085.html",
-      "title": "KDDIが通話とSMS特化のINFOBAR ZERO発表"
-    },
-    {
-      "link": "https://www.bloomberg.com/news/articles/2026-11-17/gold-steadies-near-14-month-low-as-rate-hike-pressure-mounts",
-      "title": "金価格が3％超急落しタカ派なFRB発言で1年ぶり安値"
-    },
-    {
-      "link": "https://www.bbc.co.uk/news/articles/cke89jevqm1vo?at_medium=RSS&at_campaign=rss",
-      "title": "プログラミング言語Javaに深刻な脆弱性を検出"
-    }
-  ],
   "2026-11-20": [
     {
       "link": "https://news.yahoo.co.jp/pickup/6603216?source=rss",
@@ -205,6 +179,32 @@
     {
       "link": "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/",
       "title": "米当局、宇宙ＡＩデータセンター計画承認"
+    }
+  ],
+  "2026-11-27": [
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6604071?source=rss",
+      "title": "政府、ガソリン補助金の継続方針を決定"
+    },
+    {
+      "link": "https://news.yahoo.co.jp/pickup/6604108?source=rss",
+      "title": "持ち帰り残業巡り労災認める判決"
+    },
+    {
+      "link": "https://www.fsa.go.jp/inter/fsf/20261126/20261126.html",
+      "title": "金融安定理事会、重要銀行リストを公表"
+    },
+    {
+      "link": "https://www.itmedia.co.jp/news/article/2611/26/2000003480/",
+      "title": "ＫＤＤＩ、米Ｘとデータ利活用で包括契約"
+    },
+    {
+      "link": "https://www.bloomberg.com/news/articles/2026-11-26/gold-edges-lower-as-us-inflation-data-fuels-bets-for-rate-hikes",
+      "title": "金価格、米利上げ観測で１５カ月ぶり安値水準"
+    },
+    {
+      "link": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+      "title": "エヌビディア、東南アジア向け出荷を一時停止"
     }
   ]
 }
